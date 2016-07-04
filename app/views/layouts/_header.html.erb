@@ -1,0 +1,21 @@
+<header class="navbar navbar-fixed-top navbar-inverse dn-front-header">
+  <div class="container">
+    <%= link_to t(:daily_report), root_path, id: "logo" %>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" 
+        data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" 
+        aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav class="collapse navbar-collapse dropdown" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li ><%= link_to t(:home), root_path %></li>
+        <li><%= link_to t(:login), "#" %></li>
+      </ul>
+    </nav>
+  </div>
+</header>

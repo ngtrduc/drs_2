@@ -21,3 +21,8 @@
 
 en:
   hello: "Hello world"
+  daily_report: "DAILY REPORT SYSTEMS"
+  home: "HOME"
+  login: "LOGIN"
+  title_base: "Daily report systems"
+  footer: "The footer"
