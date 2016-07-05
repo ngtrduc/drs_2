@@ -32,3 +32,7 @@ en:
   remember_me: "Remember me"
   password_confirmation: "Password Comfirmation"
   char_minimum: "character minimum"
+  login_success: "Log in successfully!!"
+  save_change: "Save Change"
+  profile_updated: "Profile updated"
+  edit_user: "Edit Profile"

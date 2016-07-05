@@ -1,0 +1,13 @@
+<% provide :title, @profile.name %>
+<div class="row">
+  <div class="col-md-6 well">
+    <p><%= t :name %>: <%= @profile.name %> </p><br/>
+    <p><%= t :avatar %>: <%= image_tag @profile.avatar.url, size: Settings.size %></p><br/>
+    <p><%= t :position %>: 
+      <%= @profile.position.name unless @profile.position.nil? %></p> <br/>
+    <p><%= t :division %>: 
+      <%= @profile.division.name unless @profile.division.nil? %></p> <br/>
+    <p><%= t :skill %>: 
+      <%= @profile.skill.name unless @profile.skill.nil? %></p> <br/>
+  </div>
+</div>
