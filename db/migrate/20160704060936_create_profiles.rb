@@ -1,6 +1,8 @@
 class CreateProfiles < ActiveRecord::Migration
   def change
     create_table :profiles do |t|
+      t.string :name
+      t.attachment :avatar
       t.string :uid
       t.references :user, index: true, foreign_key: true
       t.integer :position_id
