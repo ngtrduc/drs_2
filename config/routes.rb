@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: "users/registrations"}
   root "static_pages#home"
-  resources :users, only: [:show, :edit, :update] do 
+  resources :users, except: [:destroy, :create, :new] do 
     resources :profiles, only: [:edit, :update]
   end
   resources :passwords, only: [:new, :create]
+  resources :relationships, only: [:create, :destroy, :index]
 end
