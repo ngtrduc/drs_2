@@ -44,7 +44,24 @@ en:
   title: "Title"
   followed_reload: "Followed, Plese reload page!!"
   no_unfollowed_reload: "No UnFollowed, Plese reload page!!"
+  time_type: "%d/%m/%Y"
+  delete: "Delete"
+  sure: "Are you sure"
+  all_users: "All User"
+  destroy_success: "Delete successfully"
+  show_profile: "Show Profile"
+
+  user:
+  name: "Name"
+  email: "Email"
+  avatar: "Avatar"
+  created_at: "Created at"
+  updated_at: "Updated at"
 
   follow_user:
     following: "following"
     followers: "followers"
+  select:
+    position: "Select a position"
+    division: "Select a division"
+    skill: "Select a skill"

@@ -1,0 +1,41 @@
+<% provide :title, @profile.name %>
+<div class="row">
+  <div class="col-md-6 well">
+    <%= form_for [:admin, @profile], remote: true do |f| %>
+      <p ><%= t :name %>:
+        <span id="p-name"><%= @profile.name %></span>
+        <%= f.text_field :name, class: "edit-form hidden" %>
+      </p><br/>
+
+      <p><%= t :position %>:
+        <%= f.collection_select :position_id, @positions, :id, :name,
+          {prompt: t("select.position")}, {class: "edit-form hidden"} %>
+        <span id="p-position">
+          <%= @profile.position.name unless @profile.position.nil? %>
+        </span>
+      </p> <br/>
+
+      <p><%= t :division %>: 
+        <%= f.collection_select :division_id, @divisions, :id, :name,
+          {prompt: t("select.division")}, {class: "edit-form hidden"} %>
+        <span id="p-division">
+          <%= @profile.division.name unless @profile.division.nil? %>
+        </span>
+      </p> <br/>
+
+      <p><%= t :skill %>: 
+        <%= f.collection_select :skill_id, @skills, :id, :name,
+          {prompt: t("select.skill")}, {class: "edit-form hidden"} %>
+        <span id="p-skill">
+          <%= @profile.skill.name unless @profile.skill.nil? %>
+        </span>
+      </p> <br/>
+
+      <%= f.submit t(:save_change), class: "edit-form hidden" %>
+    <% end %>
+
+    <%= button_tag t(:edit), class: "btn btn-primary edit_button" %>
+    <%= link_to t(:delete), [:admin, @user], method: :delete, data: {confirm: t(:sure)},
+      class: "btn btn-danger btn-primary" unless current_user? @user %>
+  </div>
+</div>
