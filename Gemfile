@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
+gem "cancancan", "~> 1.10"
 gem "config"
 gem "paperclip", "~> 5.0.0.beta1"
 gem "devise"
@@ -24,4 +25,3 @@ group :development do
   gem "spring"
   gem "faker", "1.4.2"
 end
-
