@@ -1,0 +1,11 @@
+<% @user ||= current_user %>
+<div class="stats">
+  <% Settings.relation.each do |key, relation| %>
+    <%= link_to relationships_path user_id: @user, relationship: relation do %>
+      <strong id=<%= "#{relation}" %>, class="stat">
+        <%= @user.send(relation).size %>
+      </strong>
+      <%= t relation %>
+    <% end %>
+  <% end %>
+</div>

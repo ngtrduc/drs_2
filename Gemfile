@@ -12,6 +12,8 @@ gem "jquery-rails"
 gem "turbolinks"
 gem "jbuilder", "~> 2.0"
 gem "sdoc", "~> 0.4.0", group: :doc
+gem "will_paginate", "3.0.7"
+gem "config"
 
 group :development, :test do
   gem "byebug"
@@ -21,5 +23,6 @@ end
 group :development do
   gem "web-console", "~> 2.0"
   gem "spring"
+  gem "faker", "1.4.2"
 end
 

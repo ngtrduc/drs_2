@@ -4,6 +4,10 @@ class UsersController < ApplicationController
     @profile = @user.profile
   end
   
+  def index
+    @users = User.paginate page:params[:page]
+  end
+
   private
   def find_user
     @user = User.find_by_id params[:id]
