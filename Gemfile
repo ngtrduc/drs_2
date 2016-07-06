@@ -14,6 +14,11 @@ gem "turbolinks"
 gem "jbuilder", "~> 2.0"
 gem "sdoc", "~> 0.4.0", group: :doc
 gem "will_paginate", "3.0.7"
+gem "font-awesome-sass" 
+
+source "https://rails-assets.org/" do 
+  gem "rails-assets-adminlte" 
+end
 
 group :development, :test do
   gem "byebug"
