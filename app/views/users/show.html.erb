@@ -9,5 +9,11 @@
       <%= @profile.division.name unless @profile.division.nil? %></p> <br/>
     <p><%= t :skill %>: 
       <%= @profile.skill.name unless @profile.skill.nil? %></p> <br/>
+    <section class="stats">
+      <%= render "shared/stats" %>
+    </section>
+    <div class="col-md-8">
+      <%= render "follow_form" if user_signed_in? %>
+    </div>
   </div>
 </div>

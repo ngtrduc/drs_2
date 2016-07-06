@@ -1,4 +1,5 @@
 class RelationshipsController < ApplicationController
+
   def index
     @user  = User.find_by_id params[:user_id]
     if @user.nil?
@@ -15,6 +16,7 @@ class RelationshipsController < ApplicationController
     @user = User.find_by_id params[:followed_id]
     unless @result = current_user.following?(@user)
       current_user.follow @user
+      @active = current_user.active_relationships.find_by(followed_id: @user.id)
     end
     respond_to do |format|
       format.html {redirect_to @user}
@@ -24,6 +26,7 @@ class RelationshipsController < ApplicationController
 
   def destroy
     @relationship = Relationship.find_by_id params[:id]
+    @active = current_user.active_relationships.build
     if @relationship 
       @user = @relationship.followed
       current_user.unfollow @user

@@ -36,3 +36,15 @@ en:
   save_change: "Save Change"
   profile_updated: "Profile updated"
   edit_user: "Edit Profile"
+  all_users: "All Users"
+  user_fails: "User not exists"
+  follow: "Follow"
+  unfollow: "Unfollow"
+  view_my_profile: "view my profile"
+  title: "Title"
+  followed_reload: "Followed, Plese reload page!!"
+  no_unfollowed_reload: "No UnFollowed, Plese reload page!!"
+
+  follow_user:
+    following: "following"
+    followers: "followers"
