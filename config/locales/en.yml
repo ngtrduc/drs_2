@@ -50,6 +50,10 @@ en:
   all_users: "All User"
   destroy_success: "Delete successfully"
   show_profile: "Show Profile"
+  time_type: "%d/%m/%Y"
+  create: "Create"
+  edit: "Edit"
+  save: "Save"
 
   user:
   name: "Name"
@@ -75,3 +79,10 @@ en:
     skill: "Skill"
     index: "index"
     create: "create"
+  division:
+    all_divisions: "All Disivions"
+    name: "Name"
+    created_at: "Created_at"
+    updated_at: "Updated_at"
+    created: "Division created"
+    new: "New"

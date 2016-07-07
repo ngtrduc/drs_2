@@ -2,7 +2,7 @@ class Admin::UsersController < Admin::BaseController
   load_and_authorize_resource
 
   def index
-    @users = @users.paginate(page: params[:page]).per_page Settings.page_size
+    @users = @users.page params[:page]
   end
   
   def show
