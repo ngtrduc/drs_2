@@ -65,3 +65,13 @@ en:
     position: "Select a position"
     division: "Select a division"
     skill: "Select a skill"
+  admin:
+    drs: "DRS"
+    drsystem: "DAILY REPORT"
+    footer: "The footer"
+    user: "User"
+    position: "Position"
+    division: "Division"
+    skill: "Skill"
+    index: "index"
+    create: "create"

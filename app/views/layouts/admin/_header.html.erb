@@ -1,0 +1,25 @@
+<header class="main-header">
+  <a href="#" class="logo">
+    <span class="logo-mini"><b><%= t "admin.drs" %></b></span>
+    <span class="logo-lg"><b><%= t "admin.drsystem" %></b></span>
+  </a>
+
+  <nav class="navbar navbar-static-top" role="navigation">
+    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"></a>
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+        <li class="dropdown user user-menu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <%= image_tag current_user.profile.avatar.url, class: "user-image" %>
+            <span class="hidden-xs"><%= current_user.profile.name %></span>
+            <ul class="dropdown-menu dn-dropdown-menu">
+              <li>
+                <%= link_to t(:logout), destroy_user_session_path, method: :delete %>
+              </li>
+            </ul>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

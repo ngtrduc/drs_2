@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+
   devise_for :users, controllers: {registrations: "users/registrations"}
   root "static_pages#home"
 
   namespace :admin do
+    root "dashboard#index"
     resources :users, only: [:index, :show, :destroy]
     resources :profiles, only: :update
   end
