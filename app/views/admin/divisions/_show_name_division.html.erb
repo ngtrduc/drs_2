@@ -1,0 +1,10 @@
+<%= form_for [:admin, @division], remote: true do |f| %>
+  <div class="text-center">
+    <span class="dn-show-division-h1"><%= @division.name %></span>
+    <%= f.text_field :name, class: "dn-show-division-name dn-none", required: true %>
+    <span id="dn-show-division-edit">
+      <i class="fa fa-pencil-square-o dn-show-division-i"></i>
+    </span>
+    <%= f.submit t(:save), class: "btn btn-primary dn-show-divionsion-save dn-none" %>
+  </div>
+<% end %>

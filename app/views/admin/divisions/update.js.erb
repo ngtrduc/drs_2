@@ -1,0 +1,13 @@
+<% if @division.save %>
+  $("#error_mesages").html("");
+  $(".dn-show-division-h1").removeClass("dn-none");
+  $(".dn-show-division-name").addClass("dn-none");
+  $(".dn-show-divionsion-save").addClass("dn-none");
+  $("#dn-show-division-edit").removeClass("dn-none");
+  $(".dn-show-division-h1").text("<%= @division.name %>")
+<% else %>
+  $("#error_mesages").html("");
+  $("#error_mesages").append("<%= j render "shared/error_messages", object: @division %>");
+<% end %>
+
+$("#dn-all-table-division").html("<%= j render "all_division" %>");

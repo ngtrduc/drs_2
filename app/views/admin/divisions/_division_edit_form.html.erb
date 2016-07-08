@@ -1,0 +1,9 @@
+<span id="division-name-<%= "#{division.id}" %>">
+  <%= link_to division.name, [:admin, division] %>
+</span>
+<%= form_for [:admin, division],
+  html: {class: "edit-position hidden", id: "division-form-#{division.id}"},
+  remote: true do |f| %>
+  <%= f.text_field :name, class: "form-control" %>
+  <%= f.submit t(:update), class: "btn btn-success" %>
+<% end %>
