@@ -1,0 +1,14 @@
+<% provide :title, t("division.all_divisions") %>
+<h1 class="text-center"><%= t "division.all_divisions" %></h1>
+<div class="panel-body">
+  <button class="btn btn-primary" id ="dn-division-new"><%= t "division.new" %></button>
+  <%= form_for [:admin, @division], html: {class: "create_division dn-none"}, remote: true do |f| %>
+    <%= f.label t("division.name") %>
+    <%= f.text_field :name, class: "form-control", id: "dn-division-add" %>
+    <%= f.submit t(:create), class: "btn btn-primary" %>
+  <% end %>
+  <div class="dn-all-table-division" id="dn-all-table-division">
+    <%= render "all_division" %>
+  </div>
+  <%= paginate @divisions %>
+</div>

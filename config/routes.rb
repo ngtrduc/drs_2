@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     root "dashboard#index"
     resources :users, only: [:index, :show, :destroy]
     resources :profiles, only: :update
+    resources :divisions, only: [:index, :create]
   end
 
   resources :users, except: [:destroy, :create, :new] do 

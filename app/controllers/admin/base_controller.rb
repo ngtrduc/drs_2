@@ -7,5 +7,4 @@ class Admin::BaseController < ApplicationController
   def verify_admin
     redirect_to root_url unless current_user.try :is_admin?
   end
-
 end
