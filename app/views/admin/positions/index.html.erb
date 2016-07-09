@@ -1,0 +1,14 @@
+<% provide :title, t("position.all_positions") %>
+<h1 class="text-center"><%= t "position.all_positions" %></h1>
+<div class="panel-body">
+  <button class="btn btn-primary" id ="dn-position-new"><%= t "position.new" %></button>
+  <%= form_for [:admin, @position], html: {class: "create_position hidden"} do |f| %>
+    <%= f.label t("position.name") %>
+    <%= f.text_field :name, class: "form-control", id: "dn-position-add" %>
+    <%= f.submit t(:create), class: "btn btn-primary" %>
+  <% end %>
+  <div class="dn-all-table-position" id="dn-all-table-position">
+    <%= render "all_positions" %>
+  </div>
+  <%= paginate @positions %>
+</div>

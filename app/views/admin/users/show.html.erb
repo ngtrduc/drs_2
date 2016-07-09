@@ -7,7 +7,7 @@
         <%= f.text_field :name, class: "edit-form hidden" %>
       </p><br/>
 
-      <p><%= t :position %>:
+      <p><%= t "position.position" %>:
         <%= f.collection_select :position_id, @positions, :id, :name,
           {prompt: t("select.position")}, {class: "edit-form hidden"} %>
         <span id="p-position">
@@ -15,7 +15,7 @@
         </span>
       </p> <br/>
 
-      <p><%= t :division %>: 
+      <p><%= t "division.division" %>: 
         <%= f.collection_select :division_id, @divisions, :id, :name,
           {prompt: t("select.division")}, {class: "edit-form hidden"} %>
         <span id="p-division">
