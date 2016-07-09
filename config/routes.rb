@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show, :destroy]
     resources :profiles, only: :update
     resources :divisions, only: [:index, :create]
-    resources :positions, only: [:index, :create]
+    resources :positions, except: [:new]
   end
 
   resources :users, except: [:destroy, :create, :new] do 
