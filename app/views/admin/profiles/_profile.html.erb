@@ -1,0 +1,15 @@
+<tr>
+  <td><%= image_tag profile.avatar.url, class: "dn-admin-user-image",
+    size: Settings.size %></td>
+  <td><%= link_to profile.name, [:admin, profile.user] %></td>
+  <td><%= profile.position.name unless profile.position.nil? %></td>
+  <td><%= profile.division.name unless profile.division.nil? %></td>
+  <td><%= profile.updated_at.strftime t(:time_type) %></td>
+  <td class="dn-action-padding">
+    <%= link_to t(:show_profile), admin_user_path(profile.user),
+      class: "btn btn-primary" %>
+    <%= link_to t(:delete), [:admin, profile.user], method: :delete, 
+      data: {confirm: t(:sure)},
+      class: "btn btn-danger btn-primary" unless profile.user.is_admin? %>
+  </td>
+</tr>

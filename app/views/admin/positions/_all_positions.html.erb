@@ -12,10 +12,16 @@
         <td><%= index + 1 + 
           (params[:page].nil? ? 0 : (params[:page].to_i - 1)*Settings.page_size) %>
         </td>
-        <td><%= position.name %></td>
+        <td id="name-field-<%= position.id %>">
+          <%= render "position_edit_form", position: position %>
+        </td>
         <td><%= position.created_at.strftime t(:time_type) %></td>
         <td><%= position.updated_at.strftime t(:time_type) %></td>
-        <td class="dn-action-padding">
+        <td class="dn-action-padding" data-id="<%= position.id %>">
+          <%= link_to t(:edit), edit_admin_position_path(position),
+            remote: true, class: "btn btn-primary" %>
+          <%= link_to t(:delete), [:admin, position], method: :delete,
+            data: {confirm: t(:sure)}, remote: true, class: "btn btn-danger" %>
         </td>
       </tr>
     <% end %>

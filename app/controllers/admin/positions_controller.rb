@@ -6,6 +6,10 @@ class Admin::PositionsController < Admin::BaseController
     @position = Position.new
   end
 
+  def show
+    @profiles = @position.profiles.page params[:page]
+  end
+
   def create
     if @position.save
       flash[:success] = t :create_success
@@ -13,6 +17,29 @@ class Admin::PositionsController < Admin::BaseController
     else
       @positions = Position.page params[:page]
       render :index
+    end
+  end
+  
+  def edit
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def update
+    if @position.update_attributes position_params
+      respond_to do |format|
+        format.html {redirect_to admin_positions_path}
+        format.js
+      end
+    end
+  end
+
+  def destroy
+    @position.destroy
+    respond_to do |format|
+      format.html {redirect_to admin_positions_path}
+      format.js
     end
   end
 

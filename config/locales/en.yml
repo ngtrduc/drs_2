@@ -55,6 +55,7 @@ en:
   edit: "Edit"
   save: "Save"
   create_success: "Created successfully"
+  update: "update"
 
   user:
   name: "Name"
