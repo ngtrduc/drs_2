@@ -54,6 +54,7 @@ en:
   create: "Create"
   edit: "Edit"
   save: "Save"
+  create_success: "Created successfully"
 
   user:
   name: "Name"
@@ -80,9 +81,18 @@ en:
     index: "index"
     create: "create"
   division:
+    division: "Division"
     all_divisions: "All Disivions"
     name: "Name"
     created_at: "Created_at"
     updated_at: "Updated_at"
     created: "Division created"
+    new: "New"
+  position:
+    position: "Posision"
+    all_positions: "All Positions"
+    name: "Name"
+    created_at: "Created_at"
+    updated_at: "Updated_at"
+    created: "Position created"
     new: "New"

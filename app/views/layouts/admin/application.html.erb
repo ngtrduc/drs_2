@@ -16,6 +16,9 @@
 
       <div class="content-wrapper dn-content">
         <section class="content">
+          <% flash.each do |message_type, message| %>
+            <div class="alert alert-<%= message_type %>"><%= message %></div>
+          <% end %>
           <%= yield %>
         </section>
       </div>
