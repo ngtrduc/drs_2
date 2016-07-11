@@ -56,13 +56,20 @@ en:
   save: "Save"
   create_success: "Created successfully"
   update: "update"
+  theform: "The form contains"
+  all_users_of: "All users of %{division}"
+  search_name: "Fill name for search user"
+  error: "error"
+  search: "Search"
 
   user:
-  name: "Name"
-  email: "Email"
-  avatar: "Avatar"
-  created_at: "Created at"
-  updated_at: "Updated at"
+    name: "Name"
+    email: "Email"
+    avatar: "Avatar"
+    position: "Position"
+    division: "Division"
+    created_at: "Created at"
+    updated_at: "Updated at"
 
   follow_user:
     following: "following"

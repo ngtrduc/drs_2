@@ -7,11 +7,11 @@ Rails.application.routes.draw do
     root "dashboard#index"
     resources :users, only: [:index, :show, :destroy]
     resources :profiles, only: :update
-    resources :divisions, only: [:index, :create]
-    resources :positions, except: [:new]
+    resources :positions, except: :new
+    resources :divisions, except: :new
   end
 
-  resources :users, except: [:destroy, :create, :new] do 
+  resources :users, except: [:destroy, :create, :new] do
     resources :profiles, only: [:edit, :update]
   end
   resources :passwords, only: [:new, :create]

@@ -10,3 +10,22 @@
 .dn-none{
   display: none;
 }
+.dn-show-division-h1{
+  font-size: 32px;
+}
+.dn-show-division-i{
+  font-size: 30px;
+  margin-left: 20px;
+  cursor: pointer
+}
+
+.dn-show-division-name{
+  font-size: 32px;
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+hr{
+  border-top: 1px solid #666;
+}

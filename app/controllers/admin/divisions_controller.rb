@@ -16,6 +16,35 @@ class Admin::DivisionsController < Admin::BaseController
     end
   end
 
+  def show
+    @search = @division.profiles.ransack params[:q]
+    @profiles = @search.result.page params[:page]
+  end
+
+  def edit
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def update
+    @division.update_attributes division_params
+    @divisions = Division.page params[:page]
+    respond_to do |format|
+      format.html {redirect_to admin_division_path @division}
+      format.js
+    end
+  end
+
+  def destroy
+    @division.destroy
+    @divisions = Division.page params[:page]
+    respond_to do |format|
+      format.html {redirect_to admin_divisions_path}
+      format.js
+    end
+  end
+
   private
   def division_params
     params.require(:division).permit :name
