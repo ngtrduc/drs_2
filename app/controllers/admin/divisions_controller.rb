@@ -19,6 +19,7 @@ class Admin::DivisionsController < Admin::BaseController
   def show
     @search = @division.profiles.ransack params[:q]
     @profiles = @search.result.page params[:page]
+    @managers = Profile.all_manager
   end
 
   def edit

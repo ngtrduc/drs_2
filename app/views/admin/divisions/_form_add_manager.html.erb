@@ -1,0 +1,14 @@
+<% unless manager.division_id == @division.id %>
+  <%= form_for [:admin, manager],
+    html: {class: "dn-btn-add-manager dn-add-manager-#{manager.id}"},
+    remote: true do |f| %>
+    <%= f.hidden_field :division_id, value: @division.id %>
+    <% if manager.division.nil? %>
+      <%= f.submit t(:add_manager), class: "btn btn-primary" %>
+    <% else %>
+      <%= f.submit t(:add_manager), class: "btn btn-primary",
+        data: {confirm: t("confirm_add_manager",
+        manager: manager.name, division: manager.division.name)} %>
+    <% end %>
+  <% end %>
+<% end %>
