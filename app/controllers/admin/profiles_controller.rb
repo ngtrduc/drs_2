@@ -5,7 +5,6 @@ class Admin::ProfilesController < ApplicationController
     @profile = Profile.find_by_id params[:id]
     if @profile.update_attributes profile_params
       respond_to do |format|
-        format.html {redirect_to [:admin, @profile.user]}
         format.js
       end
     else

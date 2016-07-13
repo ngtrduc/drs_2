@@ -61,6 +61,10 @@ en:
   search_name: "Fill name for search user"
   error: "error"
   search: "Search"
+  add_manager: "Add Manager"
+  all_manager: "All Manager"
+  confirm_add_manager: "%{manager} doing management %{division}, Are you want to change?"
+  close: "Close"
 
   user:
     name: "Name"

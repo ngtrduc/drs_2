@@ -1,0 +1,24 @@
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><%=t :all_manager%></h4>
+      </div>
+      <div class="modal-body">
+        <% @managers.each_with_index do |manager, index| %>
+          <p class="dn-p-add-manager">
+            <span><%= index + 1 %></span>
+            <span><%= manager.name %></span>
+            <%= render "form_add_manager", manager: manager %>
+          </p>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+          <%= t :close %>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

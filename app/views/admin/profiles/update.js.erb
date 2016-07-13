@@ -4,3 +4,4 @@ $("#p-name").text("<%= @profile.name %>")
 $("#p-position").text("<%= @profile.position.name unless @profile.position.nil? %>")
 $("#p-division").text("<%= @profile.division.name unless @profile.division.nil? %>")
 $("#p-skill").text("<%= @profile.skill.name unless @profile.skill.nil? %>")
+$(".dn-add-manager-<%= @profile.id %>").remove();
