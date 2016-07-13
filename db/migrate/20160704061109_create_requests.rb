@@ -7,6 +7,8 @@ class CreateRequests < ActiveRecord::Migration
       t.datetime :leave_to
       t.boolean :approved, default: false
       t.text :reason
+      t.datetime :compensation_time_from
+      t.datetime :compensation_time_to
 
       t.timestamps null: false
     end
