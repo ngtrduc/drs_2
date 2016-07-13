@@ -45,6 +45,7 @@ en:
   followed_reload: "Followed, Plese reload page!!"
   no_unfollowed_reload: "No UnFollowed, Plese reload page!!"
   time_type: "%d/%m/%Y"
+  time_type_2: "%d/%m/%Y %I:%M%p"
   delete: "Delete"
   sure: "Are you sure"
   all_users: "All User"
@@ -55,6 +56,7 @@ en:
   edit: "Edit"
   save: "Save"
   create_success: "Created successfully"
+  update_success: "Updated successfully"
   update: "update"
   theform: "The form contains"
   all_users_of: "All users of %{division}"
@@ -67,6 +69,12 @@ en:
   close: "Close"
   time_fails: "Set time not invalid"
   new_request: "New Request"
+  delete_success: "Deleted successfully"
+  all_request: "All Requests"
+  approved: "Approved"
+  not_deleted: "Deleted unsuccessfully"
+  not_updated: "Updated unsuccessfully"
+  edit_request: "Edit Request"
 
   user:
     name: "Name"

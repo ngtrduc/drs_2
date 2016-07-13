@@ -8,16 +8,24 @@ class Request < ActiveRecord::Base
   validate :check_time
   validate :check_compensation_time
 
-  enum type: ["il", "lo", "le"]
+  enum request_type: ["il", "lo", "le"]
+
+  def approve_content
+    approved? ? I18n.t(:approved) : ""
+  end
 
   private
   def check_time
-    errors.add :requests, I18n.t(:time_fails) if leave_from > leave_to
+    unless leave_from.nil? && leave_to.nil?
+      errors.add :requests, I18n.t(:time_fails) if leave_from > leave_to
+    end
   end
 
   def check_compensation_time
-    if compensation_time_from > compensation_time_to && compensation_time_from > leave_to
-      errors.add :requests, I18n.t(:time_fails)
+    unless compensation_time_from.nil? && compensation_time_to.nil?
+      if compensation_time_from > compensation_time_to && compensation_time_from > leave_to
+        errors.add :requests, I18n.t(:time_fails)
+      end
     end
   end
 end
