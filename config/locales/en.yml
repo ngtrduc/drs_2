@@ -65,6 +65,8 @@ en:
   all_manager: "All Manager"
   confirm_add_manager: "%{manager} doing management %{division}, Are you want to change?"
   close: "Close"
+  time_fails: "Set time not invalid"
+  new_request: "New Request"
 
   user:
     name: "Name"
