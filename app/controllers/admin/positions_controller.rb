@@ -28,6 +28,7 @@ class Admin::PositionsController < Admin::BaseController
 
   def update
     if @position.update_attributes position_params
+      @positions = Position.page params[:page]
       respond_to do |format|
         format.html {redirect_to admin_positions_path}
         format.js
@@ -37,6 +38,7 @@ class Admin::PositionsController < Admin::BaseController
 
   def destroy
     @position.destroy
+    @positions = Position.page params[:page]
     respond_to do |format|
       format.html {redirect_to admin_positions_path}
       format.js

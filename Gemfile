@@ -16,9 +16,13 @@ gem "sdoc", "~> 0.4.0", group: :doc
 gem "font-awesome-sass"
 gem "kaminari"
 gem "ransack"
+gem "simple_form"
+gem "momentjs-rails"
+gem "datetimepicker-rails", github: "zpaulovics/datetimepicker-rails",
+  branch: "master", submodules: true
 
-source "https://rails-assets.org/" do 
-  gem "rails-assets-adminlte" 
+source "https://rails-assets.org/" do
+  gem "rails-assets-adminlte"
 end
 
 group :development, :test do
