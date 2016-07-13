@@ -1,15 +1,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 /* universal */
 
 body {
-  background-color: #E9E9E9;
+  background-color: #5CA0A1;
 }
 
 .dn-front-content{
   margin-top: 50px;
   min-height: 562px!important;
+  padding-top: 50px;
 }
  
 li{
@@ -65,11 +68,9 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
+  color: #464646;
   font-weight: bold;
+  cursor: pointer;
 }
 
 #logo:hover {
@@ -168,4 +169,107 @@ footer ul li {
 
 .users.follow {
   padding: 0;
+}
+
+.dn-panel-head{
+  background-color: #e5e5e5!important;
+}
+
+.panel {
+  border-radius: 2px;
+  border: 0;
+}
+
+.dn-field{
+  margin-top: 8px;
+}
+
+.dn-field .form-control{
+  border-radius: 2px;
+}
+
+.dn-submit-login{
+  display: block;
+  margin: 0 auto;
+  background-color: #5CA0A1;
+  border-color: #5CA0A1;
+  padding: 10px 25px;
+}
+
+.dn-login-sns{
+  padding-top: 0px;
+}
+
+h2.dn-login-strike{
+  position: relative;
+  text-align: center;
+  color: #a8a8a8;
+  font-size: 13px;
+  font-style: italic;
+  font-weight: normal;
+  z-index: 1;
+  span{
+    background: #fff;
+    padding: 0 10px;
+  }
+}
+
+h2.dn-login-strike:before{
+  border-top: solid 1px #d8d8d8;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  right: 10px;
+  z-index: -1;
+}
+
+.dn-fb{
+  background: #4d6498;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 26px;
+  line-height: 56px;
+  display: inline-block;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 35%;
+}
+
+.dn-twitter{
+  background: #42b1d5;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 26px;
+  line-height: 56px;
+  display: inline-block;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 3%;
+}
+
+.dn-logo-text{
+  font-size: 10px;
+  line-height: 0.7em;
+  margin-left: 30px;
+  text-transform: none;
+  letter-spacing: 1px;
+  color: #464646;
+}
+
+.dn-front-header{
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #464646;
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: #464646;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus{
+  background-color: #fff;
+  color: #464646;
 }
