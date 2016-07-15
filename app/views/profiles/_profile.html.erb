@@ -1,0 +1,7 @@
+<tr>
+  <td><%= image_tag profile.avatar.url, class: "dn-admin-user-image",
+    size: Settings.size %></td>
+  <td><%= link_to profile.name, profile.user %></td>
+  <td><%= profile.position.name if profile.position %></td>
+  <td><%= profile.division.name if profile.division %></td>
+</tr>

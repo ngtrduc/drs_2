@@ -8,9 +8,13 @@ class Ability
     if user.is_admin?
       can :manage, :all
     else
-      can :manage, Request, user_id: user.id
-      cannot [:edit, :update, :destroy], Request, Request do |request|
-        request.approved?
+      if user.manager?
+        can :manage, Division, id: user.profile.division_id
+      else
+        can :manage, Request, user_id: user.id
+        cannot [:edit, :update, :destroy], Request, Request do |request|
+          request.approved?
+        end
       end
     end
     #

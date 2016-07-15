@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   resources :passwords, only: [:new, :create]
   resources :relationships, only: [:create, :destroy, :index]
   resources :requests, except: :show
+  resources :divisions, only: [:show, :update]
 end
