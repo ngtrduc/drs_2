@@ -1,7 +1,7 @@
 class RequestsController < ApplicationController
   load_and_authorize_resource
 
-  before_action :make_request_type, only: [:new, :edit]
+  before_action :load_request_type, only: [:new, :edit]
 
   def index
     @requests = @requests.page params[:page]

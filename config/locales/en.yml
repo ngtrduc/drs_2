@@ -24,7 +24,7 @@ en:
   daily_report: "DAILY REPORT SYSTEMS"
   home: "HOME"
   login: "Log in"
-  title_base: "Daily report systems"
+  title_base: "Daily report system"
   footer: "The footer"
   signup: "Sign up"
   email: "Email"
@@ -75,6 +75,11 @@ en:
   not_deleted: "Deleted unsuccessfully"
   not_updated: "Updated unsuccessfully"
   edit_request: "Edit Request"
+  sign_in_fb: "Sign in with Facebook"
+  sign_in_twitter: "Sign in with Twitter"
+  your_email: "Your Email"
+  your_pass: "Your Password"
+  login_by: "Login by"
 
   user:
     name: "Name"

@@ -1,27 +1,47 @@
-<h2><%= t :login %></h2>
-<div class="col-md-6 col-md-offset-2">
-  <%= form_for resource, as: resource_name, url: session_path(resource_name) do |f| %>
-    <div class="field">
-      <%= f.label t :email %><br />
-      <%= f.email_field :email, autofocus: true, class: "form-control" %>
-    </div>
-
-    <div class="field">
-      <%= f.label t :password %><br />
-      <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-    </div>
-
-    <% if devise_mapping.rememberable? -%>
-      <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label t :remember_me %>
+<div class="row">
+  <div class="col-lg-5 col-lg-push-7">
+    <div class="panel panel-default">
+      <div class="panel-heading dn-panel-head">
+        <h4><%= t :login %></h4>
       </div>
-    <% end -%>
+      <div class="panel-body">
+        <%= form_for resource, as: resource_name, url: session_path(resource_name) do |f| %>
+          <div class="field dn-field">
+            <%= f.email_field :email, autofocus: true, class: "form-control",
+              placeholder: t(:your_email) %>
+          </div>
 
-    <div class="actions">
-      <%= f.submit t(:login), class: "btn btn-primary" %>
+          <div class="field dn-field">
+            <%= f.password_field :password, autocomplete: "off",
+              class: "form-control", placeholder: t(:your_pass) %>
+          </div>
+
+          <% if devise_mapping.rememberable? -%>
+            <div class="field dn-field">
+              <%= f.check_box :remember_me %>
+              <%= f.label t :remember_me %>
+            </div>
+          <% end -%>
+
+          <div class="actions">
+            <%= f.submit t(:login), class: "btn btn-primary dn-submit-login" %>
+          </div>
+        <% end %>
+        <div class="dn-login-sns">
+          <h2 class="dn-login-strike">
+            <span><%= t :login_by %></span>
+          </h2>
+          <%= link_to "", user_omniauth_authorize_path(:facebook),
+            class: "fa fa-facebook dn-fb" %>
+          <%= link_to "", user_omniauth_authorize_path(:twitter),
+            class: "fa fa-twitter dn-twitter" %>
+        </div>
+        <%= render "devise/shared/links" %>
+      </div>
     </div>
-  <% end %>
-
-  <%= render "devise/shared/links" %>
-<div/>
+  </div>
+  <div class="col-lg-7 col-lg-pull-5 main-photo">
+    <img class="img img-responsive"
+      src="http://marcell-thenextstep.rhcloud.com/content/images/2016/05/workspace.jpg">
+  </div>
+</div>

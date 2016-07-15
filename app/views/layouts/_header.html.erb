@@ -1,6 +1,9 @@
 <header class="navbar navbar-fixed-top navbar-inverse dn-front-header">
   <div class="container">
-    <%= link_to t(:daily_report), root_path, id: "logo" %>
+    <%= link_to root_path, id: "logo" do %>
+      <img src="http://recruit.framgia.vn/wp-content/uploads/2016/06/framgia-logo-black-1.png">
+      <p class="dn-logo-text"><i><%= t :title_base %></i></p>
+    <% end %>
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" 
         data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" 
