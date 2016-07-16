@@ -82,12 +82,12 @@ ActiveRecord::Schema.define(version: 20160704080511) do
     t.integer  "request_type"
     t.datetime "leave_from"
     t.datetime "leave_to"
-    t.boolean  "approved",               default: false
+    t.integer  "status",                 default: 0
     t.text     "reason"
     t.datetime "compensation_time_from"
     t.datetime "compensation_time_to"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
 
   add_index "requests", ["user_id"], name: "index_requests_on_user_id"

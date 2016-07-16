@@ -1,0 +1,12 @@
+<% if current_user.manager? %>
+  <%= render request.approved? ? "approved" : "waiting" ,request: request %>
+  <%= form_for request, remote: true,
+    html: {class: "dn-form-not_approve-#{request.id} "} do |f| %>
+    <%= f.hidden_field :status, value: "not_approve" %>
+    <%= f.submit t(:not_approve), class: "btn btn-danger",
+      data: {confirm: t("request.sure_not_approve",
+      user: request.user.profile.name)} %>
+  <% end %>
+<% else %>
+  <%= request.approved? ? t(:approved) : t(:waiting) %>
+<% end %>
