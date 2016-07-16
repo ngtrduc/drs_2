@@ -129,3 +129,13 @@ en:
     updated_at: "Updated_at"
     created: "Position created"
     new: "New"
+
+  reports:
+    new: "New Report"
+    all: "All reports"
+    duration:
+      half_day: "Half day"
+      full_day: "Full day"
+    errors:
+      no_future: "Can not create report in future"
+      no_same_day: "Can not create more than one report in the same day"

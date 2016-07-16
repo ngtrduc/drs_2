@@ -5,6 +5,7 @@ class CreateReports < ActiveRecord::Migration
       t.integer :progess_id
       t.integer :duration
       t.text :achievement
+      t.date :report_date
 
       t.timestamps null: false
     end
