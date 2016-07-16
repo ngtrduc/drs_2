@@ -80,6 +80,12 @@ en:
   your_email: "Your Email"
   your_pass: "Your Password"
   login_by: "Login by"
+  add_member: "Add member to this division"
+  members: "Members"
+  other_members: "Other Members"
+  add: "Add"
+  add_success: "Add members successfully"
+  division_not_exist: "This division not exist"
 
   user:
     name: "Name"

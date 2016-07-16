@@ -4,12 +4,12 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
     :rememberable, :validatable, :omniauthable
   has_one :profile, dependent: :destroy
-  
+
   has_many :requests, dependent: :destroy
   has_many :notifications, dependent: :destroy
   has_many :reports, dependent: :destroy
   has_many :active_relationships, class_name: Relationship.name,
-    foreign_key: "follower_id", dependent: :destroy											
+    foreign_key: "follower_id", dependent: :destroy
   has_many :passive_relationships, class_name: Relationship.name,
     foreign_key: "followed_id", dependent: :destroy
   has_many :followers, through: :passive_relationships, source: :follower
@@ -25,6 +25,11 @@ class User < ActiveRecord::Base
 
   def following? other_user
     following.include? other_user
+  end
+
+  # 1 is id of "manager" position
+  def manager?
+    1 == profile.position_id
   end
 
   class << self
