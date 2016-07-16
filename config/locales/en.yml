@@ -86,6 +86,9 @@ en:
   add: "Add"
   add_success: "Add members successfully"
   division_not_exist: "This division not exist"
+  date_from: "Date >= to"
+  date_to: "Date <= to"
+  filter: "Filter"
 
   user:
     name: "Name"
@@ -139,7 +142,20 @@ en:
     errors:
       no_future: "Can not create report in future"
       no_same_day: "Can not create more than one report in the same day"
+
   progesses:
     all: "All Progesses"
     new: "New Progess"
     name: "Name"
+
+  request:
+    user: "User"
+    type: "Type"
+    leave_from: "Leave from"
+    leave_to: "Leave to"
+    reason: "Reason"
+    compensation_time_from: "Compensation Time From"
+    compensation_time_to: "Compensation Time To"
+    status: "Status"
+    time_type_3: "yyyy-mm-dd"
+

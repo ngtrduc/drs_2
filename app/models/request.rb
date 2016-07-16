@@ -10,6 +10,9 @@ class Request < ActiveRecord::Base
 
   enum request_type: ["il", "lo", "le"]
 
+  scope :all_division, -> manager_division_id {where "user_id IN
+    (SELECT user_id FROM profiles WHERE division_id = ?)", manager_division_id}
+
   def approve_content
     approved? ? I18n.t(:approved) : ""
   end

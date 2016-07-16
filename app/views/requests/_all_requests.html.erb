@@ -1,13 +1,14 @@
 <table class="table">
   <thead>
     <th>#</th>
+    <th><%= t "request.user" if current_user.manager? %></th>
     <th><%= t "request.type" %></th>
     <th><%= t "request.leave_from" %></th>
     <th><%= t "request.leave_to" %></th>
     <th><%= t "request.reason" %></th>
     <th><%= t "request.compensation_time_from" %></th>
     <th><%= t "request.compensation_time_to" %></th>
-    <th><%= t "request.approved" %></th>
+    <th><%= t "request.status" %></th>
     <th class="action"><%= t :action %></th>
   </thead>
   <tbody>
@@ -16,6 +17,7 @@
         <td><%= index + 1 +
           (params[:page].nil? ? 0 : (params[:page].to_i - 1)*Settings.page_size) %>
         </td>
+        <td><%= request.user.email if current_user.manager? %></td>
         <td><%= request.request_type %></td>
         <td><%= request.leave_from.strftime t(:time_type_2) %></td>
         <td><%= request.leave_to.strftime t(:time_type_2) %></td>
@@ -28,7 +30,7 @@
           <%= request.compensation_time_to.strftime t(:time_type_2) unless
             request.compensation_time_to.nil? %>
         </td>
-        <td><%= request.approve_content %></td>
+        <td></td>
         <td>
           <% if can? :update, request %>
             <%= link_to t(:edit), edit_request_path(request), class: "btn btn-primary" %>
