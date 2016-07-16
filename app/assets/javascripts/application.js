@@ -10,17 +10,22 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require i18n/translations
 //= require jquery
 //= require jquery_ujs
 //= require moment
 //= require bootstrap-datetimepicker
 //= require pickers
+//= require datepicker
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
 
 $(document).on('ready', function() {
   set_timetout();
+  $('.input-daterange').datepicker({
+    format: I18n.t("request.time_type_3")
+  });
 });
 
 function set_timetout() {

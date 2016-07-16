@@ -3,8 +3,15 @@ class RequestsController < ApplicationController
 
   before_action :load_request_type, only: [:new, :edit]
 
-  def index
-    @requests = @requests.page params[:page]
+  def index  
+    if current_user.manager?
+      load_request_type
+      @search = Request.all_division(current_user.profile.division_id)
+        .ransack params[:q]      
+      @requests = @search.result.includes(:user).page params[:page]
+    else
+      @requests = current_user.requests.page params[:page]
+    end
   end
 
   def new

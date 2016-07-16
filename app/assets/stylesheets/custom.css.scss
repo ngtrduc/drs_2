@@ -2,6 +2,7 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "datepicker";
 
 /* universal */
 
@@ -272,4 +273,38 @@ h2.dn-login-strike:before{
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus{
   background-color: #fff;
   color: #464646;
+}
+
+.dn-inline{
+  display: inline-block;
+}
+
+.dn-request-search-create{
+  margin-left: 20px;
+}
+
+.dn-date-range{
+  width: 50%!important;
+}
+
+.dn-search-request-type{
+  margin-top: 20px;
+  select{
+    height: 30px;
+    width: 56%!important;
+  }
+}
+
+.dn-request-action{
+  margin-left: 10px;
+  input{
+   margin-top: 20px;
+  }
+}
+
+.dn-select-request-type{
+  height: 30px;
+  margin-top: 20px;
+  margin-left: 88px;
+  width: 36.5%!important;
 }

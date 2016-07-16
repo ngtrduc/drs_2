@@ -1,0 +1,35 @@
+<%= search_form_for @search, url: requests_path,
+  html: {class: "form-inline", method: :get} do |f| %>
+  <div class="input-daterange dn-date-range col-md-6">
+    <%= f.label :created_at %>
+    <div class="dn-inline dn-request-search-create">
+      <%= f.text_field :created_at_gteq,
+        class: "form-control", placeholder: t(:date_from) %>     
+    </div>
+    <div class="dn-inline dn-request-search-create">
+      <%= f.text_field :created_at_lteq,
+        class: "form-control", placeholder: t(:date_to) %>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <%= f.label :user_email_cont %>
+    <%= f.text_field :user_email_cont, class: "form-control dn-request-search-create" %>
+  </div>
+
+  <div class= "col-md-4 dn-search-request-type">
+    <%= f.label :request_type %>
+    <%= f.select :request_type_eq,
+      @request_types, {include_blank: true}, class: "form-control" %>
+  </div>
+
+  <div class="col-md-6 col-md-offset-2">
+    <%= f.label :approved %>
+    <%= f.select :approved_eq, options_for_select([false, true]),
+      {include_blank: true}, class: "dn-select-request-type form-control" %>
+  </div>
+
+  <div class="dn-request-action dn-inline">
+    <%= f.submit t(:search), class: "btn btn-success" %>
+  </div>
+<% end %>

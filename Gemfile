@@ -22,6 +22,7 @@ gem "datetimepicker-rails", github: "zpaulovics/datetimepicker-rails",
   branch: "master", submodules: true
 gem "omniauth-facebook"
 gem "omniauth-twitter"
+gem "i18n-js", ">= 3.0.0.rc11"
 
 source "https://rails-assets.org/" do
   gem "rails-assets-adminlte"
