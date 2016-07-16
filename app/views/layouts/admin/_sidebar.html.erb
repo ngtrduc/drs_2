@@ -2,37 +2,44 @@
   <section class="sidebar">
     <ul class="sidebar-menu">
       <li class="active">
-        <%= link_to admin_root_path do %> 
-          <i class="fa fa-link"></i> 
+        <%= link_to admin_root_path do %>
+          <i class="fa fa-link"></i>
           <span><%= t "admin.dashbord" %></span>
         <% end %>
       </li>
 
       <li>
         <%= link_to admin_users_path do %>
-          <i class="glyphicon glyphicon-user"></i> 
+          <i class="glyphicon glyphicon-user"></i>
           <span><%= t "admin.user" %></span>
-        <% end %>  
+        <% end %>
       </li>
 
       <li>
-        <%= link_to admin_positions_path do %> 
-          <i class="glyphicon glyphicon-list-alt"></i> 
+        <%= link_to admin_positions_path do %>
+          <i class="glyphicon glyphicon-list-alt"></i>
           <span><%= t "admin.position" %></span>
         <% end %>
       </li>
 
       <li>
-        <%= link_to admin_divisions_path do %> 
-          <i class="glyphicon glyphicon-list-alt"></i> 
+        <%= link_to admin_divisions_path do %>
+          <i class="glyphicon glyphicon-list-alt"></i>
           <span><%= t "admin.division" %></span>
         <% end %>
       </li>
 
       <li>
-        <%= link_to "#" do %> 
-          <i class="glyphicon glyphicon-tasks"></i> 
+        <%= link_to "#" do %>
+          <i class="glyphicon glyphicon-tasks"></i>
           <span><%= t "admin.skill" %></span>
+        <% end %>
+      </li>
+
+      <li>
+        <%= link_to admin_progesses_path do %>
+          <i class="glyphicon glyphicon-list-alt"></i>
+          <span><%= t "admin.progesses" %></span>
         <% end %>
       </li>
     </ul>

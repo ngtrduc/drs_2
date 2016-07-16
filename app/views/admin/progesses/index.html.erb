@@ -1,0 +1,14 @@
+<% provide :title, t("progesses.all") %>
+<h1 class="text-center"><%= t "progesses.all" %></h1>
+<div class="panel-body">
+  <button class="btn btn-primary" id ="dn-progess-new"><%= t "progesses.new" %></button>
+  <%= form_for [:admin, @progess], html: {class: "create_progess hidden"} do |f| %>
+    <%= f.label t("progesses.name") %>
+    <%= f.text_field :name, class: "form-control", id: "dn-progess-add" %>
+    <%= f.submit t(:create), class: "btn btn-primary" %>
+  <% end %>
+  <div class="dn-all-table-progesses" id="dn-all-table-progess">
+    <%= render "all_progesses" %>
+  </div>
+  <%= paginate @progesses %>
+</div>

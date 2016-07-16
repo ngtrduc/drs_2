@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :profiles, only: :update
     resources :positions, except: :new
     resources :divisions, except: :new
+    resources :progesses, except: [:new, :show]
   end
 
   resources :users, except: [:destroy, :create, :new] do

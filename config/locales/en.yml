@@ -110,6 +110,7 @@ en:
     user: "User"
     position: "Position"
     division: "Division"
+    progesses: "Progess"
     skill: "Skill"
     index: "index"
     create: "create"
@@ -129,7 +130,6 @@ en:
     updated_at: "Updated_at"
     created: "Position created"
     new: "New"
-
   reports:
     new: "New Report"
     all: "All reports"
@@ -139,3 +139,7 @@ en:
     errors:
       no_future: "Can not create report in future"
       no_same_day: "Can not create more than one report in the same day"
+  progesses:
+    all: "All Progesses"
+    new: "New Progess"
+    name: "Name"
