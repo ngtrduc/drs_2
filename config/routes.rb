@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     resources :positions, except: :new
     resources :divisions, except: :new
     resources :progesses, except: [:new, :show]
+    resource :charts do
+      collection {get :index}
+    end
   end
 
   resources :users, except: [:destroy, :create, :new] do
