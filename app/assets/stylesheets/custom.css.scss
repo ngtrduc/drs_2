@@ -15,7 +15,7 @@ body {
   min-height: 562px!important;
   padding-top: 50px;
 }
- 
+
 li{
   list-style: none;
 }
@@ -357,4 +357,10 @@ h2.dn-login-strike:before{
 }
 .dn-ducoc li:hover{
   background-color: #5CA0A1;
+}
+
+.timestamp {
+  color: $gray-light;
+  display: block;
+  margin-left: 60px;
 }

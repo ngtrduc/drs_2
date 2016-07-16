@@ -11,4 +11,8 @@ module ApplicationHelper
   def current_user? user
     current_user == user
   end
+
+  def notification_content notification
+    t "notification.#{notification.noti_type}"
+  end
 end

@@ -3,6 +3,14 @@ class Division < ActiveRecord::Base
 
   validates :name, length: {maximum: 50}, presence: true
 
+  def all_managers
+    profiles.select {|profile| profile.position_id == 1}
+  end
+
+  def all_users
+    profiles.select {|profile| profile.position_id != 1}
+  end
+
   def load_old_profile params
     profiles.each do |profile|
       params << profile.id

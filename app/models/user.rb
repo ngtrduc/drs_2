@@ -33,6 +33,10 @@ class User < ActiveRecord::Base
     1 == profile.position_id
   end
 
+  def unread_noti
+    notifications.unread
+  end
+
   class << self
     def from_omniauth auth
       user = User.find_or_initialize_by provider: auth.provider, uid: auth.uid
