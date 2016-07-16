@@ -15,7 +15,9 @@ class Ability
         cannot [:edit, :update, :destroy], Request, Request do |request|
           request.approved?
         end
+        can :manage, Report, user_id: user.id
       end
+
     end
     #
     # The first argument to `can` is the action you are giving the user

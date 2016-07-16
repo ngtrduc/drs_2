@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20160704080511) do
     t.integer  "progess_id"
     t.integer  "duration"
     t.text     "achievement"
+    t.date     "report_date"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

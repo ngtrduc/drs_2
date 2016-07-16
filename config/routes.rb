@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy, :index]
   resources :requests, except: :show
   resources :divisions, only: [:show, :update]
+  resources :reports, except: :show
 end
