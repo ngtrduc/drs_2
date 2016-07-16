@@ -1,0 +1,6 @@
+<span id="progess-name-<%= "#{progess.id}" %>"><%= progess.name %></span>
+<%= form_for [:admin, progess], html: {class: "edit-progess hidden", id: "progess-form-#{progess.id}"},
+  remote: true do |f| %>
+  <%= f.text_field :name, class: "form-control" %>
+  <%= f.submit t(:update), class: "btn btn-success" %>
+<% end %>
