@@ -1,32 +1,44 @@
-<h2><%= t :signup %></h2>
-<div class="col-md-6 col-md-offset-2">
-  <%= form_for resource, as: resource_name,
-    url: registration_path(resource_name) do |f| %>
-    
-    <%= devise_error_messages! %>
-
-    <div class="field">
-      <%= f.label t :email %><br />
-      <%= f.email_field :email, autofocus: true, class: "form-control" %>
+<div class="row">
+  <div class="col-lg-5 col-lg-push-7">
+    <div class="panel panel-default">
+      <div class="panel-heading dn-panel-head">
+        <h4><%= t :signup %></h4>
+      </div>
+      <div class="panel-body">
+        <%= form_for resource, as: resource_name,
+          url: registration_path(resource_name) do |f| %>
+          <%= devise_error_messages! %>
+          <div class="field">
+            <%= f.email_field :email, autofocus: true, class: "form-control",
+            placeholder: t(:your_email) %>
+          </div>
+          <div class="field dn-field">
+            <%= f.password_field :password, autocomplete: "off",
+              class: "form-control", placeholder: t(:your_pass) %>
+            <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> <%= t :char_minimum %>)</em>
+            <% end %><br />
+          </div>
+          <div class="field">
+            <%= f.password_field :password_confirmation, autocomplete: "off",
+              class: "form-control", placeholder: t(:your_pass_conf) %>
+          </div>
+          <div class="actions dn-field">
+            <%= f.submit t(:signup), class: "btn btn-primary dn-submit-login" %>
+          </div>
+        <% end %>
+        <div class="dn-login-sns dn-sign-sns">
+          <h2 class="dn-login-strike">
+            <span><%= t :login_by %></span>
+          </h2>
+          <%= link_to "", user_omniauth_authorize_path(:facebook),
+            class: "fa fa-facebook dn-fb" %>
+          <%= link_to "", user_omniauth_authorize_path(:twitter),
+            class: "fa fa-twitter dn-twitter" %>
+        </div>
+        <%= render "devise/shared/links" %>
+      </div>
     </div>
-
-    <div class="field">
-      <%= f.label t :password %>
-      <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> <%= t :char_minimum %>)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-    </div>
-
-    <div class="field">
-      <%= f.label t :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
-    </div>
-
-    <div class="actions">
-      <%= f.submit t(:signup), class: "btn btn-primary" %>
-    </div>
-  <% end %>
-
-  <%= render "devise/shared/links" %>
+  </div>
+  <%= render "shared/img_background" %>
 </div>

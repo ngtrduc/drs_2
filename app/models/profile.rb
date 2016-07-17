@@ -16,5 +16,6 @@ class Profile < ActiveRecord::Base
   scope :all_manager, -> {where("position_id IN (select id from positions where
     positions.name = ?)", "Manager")}
   scope :not_in, -> division_id {where("division_id NOT IN (select id from divisions
-    where divisions.id == #{division_id})") + where(division_id: nil)}
+    where divisions.id == #{division_id})") + where(division_id: nil) -
+    where(position_id: 1)}
 end

@@ -22,6 +22,11 @@ Rails.application.routes.draw do
   resources :passwords, only: [:new, :create]
   resources :relationships, only: [:create, :destroy, :index]
   resources :requests, except: :show
-  resources :divisions, only: [:show, :update]
+  resources :divisions, only: [:show, :update] do
+    collection do
+      match "search" => "divisions#show",
+        via: [:get, :post], as: :search
+    end
+  end
   resources :reports, except: :show
 end

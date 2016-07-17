@@ -18,6 +18,11 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li><%= link_to t(:home), root_path %></li>
+          <% if can? :manage, Division %>
+            <li>
+              <%= link_to t(:division_head), current_user.profile.division %>
+            </li>
+          <% end %>
           <li><%= link_to t(:request_head), requests_path %></li>
           <li><%= link_to t(:report_head), reports_path %></li>
           <li class="dropdown">
