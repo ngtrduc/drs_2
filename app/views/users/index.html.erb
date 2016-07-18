@@ -1,9 +1,17 @@
 <% provide :title, t(:all_users) %>
-<div class="dn-front-group col-md-8 col-md-offset-2 dn-front-all-users">
-  <h1><%= t :all_users %></h1>
-
-  <ul class="users">
-    <%= render @users %>
-  </ul>
-  <%= paginate @users %>
+<div class="row">
+  <div class="col-lg-5 col-lg-push-7">
+    <div class="panel panel-default">
+      <div class="panel-heading dn-panel-head">
+        <h4><%= t :allusers %></h4>
+      </div>
+      <div class="panel-body">
+        <ul class="users">
+          <%= render @users %>
+        </ul>
+        <%= paginate @users %>
+      </div>
+    </div>
+  </div>
+  <%= render "shared/img_background" %>
 </div>

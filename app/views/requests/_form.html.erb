@@ -1,30 +1,35 @@
-<%= simple_form_for @request do |f| %>
+<%= simple_form_for @request, html: {class: "dn-form-request"} do |f| %>
 
   <div class="form-group">
     <%= f.label :request_type %>
     <%= f.select :request_type,
       options_for_select(@request_types.collect {|k, v| [k, k]},
-      @request.request_type), {}, class: "form-control" %>
+      @request.request_type), {prompt: t(:select_request_type)},
+        class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.input :leave_from, as: :datetime_picker %>
+    <%= f.input :leave_from,
+      as: :datetime_picker, placeholder: t("request.leave_from") %>
   </div>
 
   <div class="form-group">
-    <%= f.input :leave_to, as: :datetime_picker %>
+    <%= f.input :leave_to,
+      as: :datetime_picker, placeholder: t("request.leave_to") %>
   </div>
 
   <div class="form-group">
-    <%= f.input :reason %>
+    <%= f.input :reason, placeholder: t("request.reason") %>
   </div>
 
   <div class="form-group">
-    <%= f.input :compensation_time_from, as: :datetime_picker %>
+    <%= f.input :compensation_time_from,
+      as: :datetime_picker, placeholder: t("request.compensation_time_from") %>
   </div>
 
   <div class="form-group">
-    <%= f.input :compensation_time_to, as: :datetime_picker %>
+    <%= f.input :compensation_time_to,
+      as: :datetime_picker, placeholder: t("request.compensation_time_to") %>
   </div>
 
   <div class="form-group">

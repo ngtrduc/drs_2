@@ -1,12 +1,12 @@
 <% provide :title, @division.name %>
-<h1 class="text-center"><%= @division.name %></h1>
-<div class="row">
-  <%= button_tag t(:add_member), class: "btn btn-primary", id: "add-member" %>
+<div class="dn-font-group">
+  <h1 class="text-center"><%= @division.name %></h1>
+  <%= button_tag t(:add_member), class: "btn btn-info dn-btn-add-member", id: "add-member" %>
   <div id="members">
-    <h3><%= t :members %></h3>
+    <h3 class="text-center"><%= t :members %></h3>
     <table class="table">
       <thead>
-        <th><%= t "user.avatar" %></th>
+        <th class="dn-tab-avatar"><%= t "user.avatar" %></th>
         <th><%= t "user.name" %></th>
         <th><%= t "user.position" %></th>
         <th><%= t "user.skill" %></th>
@@ -20,7 +20,7 @@
   </div>
 
   <div id= "other_members" class="hidden">
-    <h3><%= t :other_members %></h3>
+    <h3 class="text-center"><%= t :other_members %></h3>
     <%= render "add_member_form" %>
   </div>
 </div>

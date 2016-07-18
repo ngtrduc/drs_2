@@ -1,24 +1,26 @@
 <%= form_for @division do |f| %>
   <table class="table">
     <thead>
-      <th><%= t "user.avatar" %></th>
+      <th class="dn-tab-avatar"><%= t "user.avatar" %></th>
       <th><%= t "user.name" %></th>
-      <th><%= t "user.position" %></th>
+      <th><%= t "user.skill" %></th>
+      <th><%= t "user.uid" %></th>
       <th><%= t "user.division" %></th>
       <th class="action"><%= t :action %></th>
     </thead>
     <tbody>
       <% @other_profiles.each do |profile| %>
         <tr>
-          <td><%= image_tag profile.avatar.url, class: "dn-admin-user-image",
-            size: Settings.size %></td>
+          <td class="dn-tab-avatar"><%= image_tag profile.avatar.url,
+            class: "dn-admin-user-image", size: Settings.size %></td>
           <td><%= link_to profile.name, profile.user %></td>
-          <td><%= profile.position.name if profile.position %></td>
+          <td><%= profile.skill.name if profile.skill %></td>
+          <td><%= profile.uid %></td>
           <td><%= profile.division.name if profile.division %></td>
           <td><%= check_box_tag "division[profile_ids][]", profile.id %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
-  <%= f.submit t(:add), class: "btn btn-primary" %>
+  <%= f.submit t(:add), class: "btn btn-primary dn-submit-login" %>
 <% end %>
