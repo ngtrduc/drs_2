@@ -1,28 +1,38 @@
-<h2><%= t :edit %> <%= resource_name.to_s.humanize %></h2>
-<div class="col-md-6 col-md-offset-2">
-  <%= form_for resource, as: resource_name,
-    url: registration_path(resource_name), html: {method: :put} do |f| %>
-    <%= devise_error_messages! %>
+<div class="row">
+  <div class="col-lg-5 col-lg-push-7">
+    <div class="panel panel-default">
+      <div class="panel-heading dn-panel-head">
+        <h4><%= t :edit %> <%= resource_name.to_s.humanize %></h4>
+      </div>
+      <div class="panel-body">
+        <%= form_for resource, as: resource_name,
+          url: registration_path(resource_name), html: {method: :put} do |f| %>
+          <%= devise_error_messages! %>
 
-    <div class="field">
-      <%= f.label :password %> <br />
-      <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-    </div>
+          <div class="field">
+            <br />
+            <%= f.password_field :password, autocomplete: "off",
+              class: "form-control", placeholder: t(:new_pass) %>
+          </div>
 
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation,
-        autocomplete: "off", class: "form-control" %>
-    </div>
+          <div class="field">
+            <br />
+            <%= f.password_field :password_confirmation, autocomplete: "off",
+             class: "form-control", placeholder: t(:new_pass_conf) %>
+          </div>
 
-    <div class="field">
-      <%= f.label :current_password %><br />
-      <%= f.password_field :current_password,
-        autocomplete: "off", class: "form-control" %>
-    </div>
+          <div class="field">
+            <br />
+            <%= f.password_field :current_password, autocomplete: "off",
+              class: "form-control", placeholder: t(:current_pass) %>
+          </div>
 
-    <div class="actions">
-      <%= f.submit t :save_change, class: "btn btn-primary" %>
+          <div class="actions dn-field">
+            <%= f.submit t(:save_change), class: "btn btn-primary dn-submit-login" %>
+          </div>
+        <% end %>
+      </div>
     </div>
-  <% end %>
+  </div>
+  <%= render "shared/img_background" %>
 </div>

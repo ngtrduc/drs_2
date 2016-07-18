@@ -9,6 +9,7 @@ class Ability
       can :manage, :all
     else
       if user.manager?
+        can :manage, Report
         can :manage, Division, id: user.profile.division_id
         can [:read, :update], Request
         cannot :destroy, Request

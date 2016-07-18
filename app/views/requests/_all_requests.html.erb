@@ -19,11 +19,17 @@
         <td><%= index + 1 +
           (params[:page].nil? ? 0 : (params[:page].to_i - 1)*Settings.page_size) %>
         </td>
-        <td><%= request.user.email if current_user.manager? %></td>
+        <td>
+          <div class="dn-text-wrap dn-text-email">
+            <%= request.user.email if current_user.manager? %>
+          </div>
+        </td>
         <td><%= request.request_type %></td>
         <td><%= request.leave_from.strftime t(:time_type_2) %></td>
         <td><%= request.leave_to.strftime t(:time_type_2) %></td>
-        <td><%= request.reason %></td>
+        <td>
+          <div class="dn-text-wrap dn-text-reason"><%= request.reason %></div>
+        </td>
         <td>
           <%= request.compensation_time_from.strftime t(:time_type_2) unless
             request.compensation_time_from.nil? %>

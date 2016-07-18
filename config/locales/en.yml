@@ -79,6 +79,7 @@ en:
   sign_in_twitter: "Sign in with Twitter"
   your_email: "Your Email"
   your_pass: "Your Password"
+  your_pass_conf: "Password confirmation"
   login_by: "Login by"
   add_member: "Add member to this division"
   members: "Members"
@@ -96,6 +97,12 @@ en:
   request_head: "Request"
   report_head: "Report"
   show: "Show charts"
+  division_head: "Division"
+  new_pass: "New Password"
+  new_pass_conf: "New Password Confirmation"
+  current_pass: "Current_pass"
+  notification: "Notification"
+  all: "All"
 
   user:
     name: "Name"
@@ -103,6 +110,9 @@ en:
     avatar: "Avatar"
     position: "Position"
     division: "Division"
+    skill: "Skill"
+    uid: "UID"
+
     created_at: "Created at"
     updated_at: "Updated at"
 
@@ -163,8 +173,8 @@ en:
     leave_from: "Leave from"
     leave_to: "Leave to"
     reason: "Reason"
-    compensation_time_from: "Compensation Time From"
-    compensation_time_to: "Compensation Time To"
+    compensation_time_from: "Compensate From"
+    compensation_time_to: "Compensate To"
     status: "Status"
     time_type_3: "yyyy-mm-dd"
     sure_approve: "Do you want approve for %{user}?"

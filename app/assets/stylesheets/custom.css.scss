@@ -291,7 +291,7 @@ h2.dn-login-strike:before{
   margin-top: 20px;
   select{
     height: 30px;
-    width: 56%!important;
+    width: 36%!important;
   }
 }
 
@@ -305,6 +305,33 @@ h2.dn-login-strike:before{
 .dn-select-request-type{
   height: 30px;
   margin-top: 20px;
-  margin-left: 88px;
+  margin-left: 23%;
   width: 36.5%!important;
+}
+
+.dn-sign-sns{
+  margin-top: -17px;
+}
+
+.dn-font-group{
+  font-size: 16px !important;
+  background-color: #eaeaea;
+  margin-top: 20px;
+  padding-bottom: 15px;
+  padding-top: 10px;
+}
+.dn-text-wrap{
+  word-wrap: break-word;
+}
+
+.dn-text-reason{
+  width: 150px;
+}
+
+.dn-text-email{
+  width: 100px;
+}
+
+.dn-text-leave{
+  width: 50px;
 }

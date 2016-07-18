@@ -17,16 +17,16 @@
     <%= f.text_field :user_email_cont, class: "form-control dn-request-search-create" %>
   </div>
 
-  <div class= "col-md-4 dn-search-request-type">
+  <div class= "col-md-6 dn-search-request-type">
     <%= f.label :request_type %>
     <%= f.select :request_type_eq,
-      @request_types, {include_blank: true}, class: "form-control" %>
+      @request_types, {include_blank: t(:all)}, class: "form-control" %>
   </div>
 
-  <div class="col-md-6 col-md-offset-2">
+  <div class="col-md-6">
     <%= f.label :status %>
     <%= f.select :status_eq, @statuses,
-      {include_blank: true}, class: "dn-select-request-type form-control" %>
+      {include_blank: t(:all)}, class: "dn-select-request-type form-control" %>
   </div>
 
   <div class="dn-request-action dn-inline">

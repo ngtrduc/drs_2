@@ -9,10 +9,12 @@
         <th><%= t "user.avatar" %></th>
         <th><%= t "user.name" %></th>
         <th><%= t "user.position" %></th>
+        <th><%= t "user.skill" %></th>
+        <th><%= t "user.uid" %></th>
         <th><%= t "user.division" %></th>
       </thead>
       <tbody>
-        <%= render @profiles %>
+        <%= render "profile_info" %>
       </tbody>
     </table>
   </div>
