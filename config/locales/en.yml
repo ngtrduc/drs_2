@@ -155,6 +155,9 @@ en:
     new: "New Report"
     all: "All reports"
     chart: "Report Chart"
+    select_duration: "Select duration"
+    date: "Report date"
+    achievement: "Achievement"
     duration:
       half_day: "Half day"
       full_day: "Full day"
@@ -185,7 +188,9 @@ en:
     sure_wait: "Do you want waiting for approve of %{user}?"
     sure_not_approve: "Are you sure not approve for %{user}?"
     chart: "Request Chart"
+
   mailer:
     reports:
       subject: "Daily Reports of users"
       title: "Reports of user's report"
+    select_request_type: "Select request type"

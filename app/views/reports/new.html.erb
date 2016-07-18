@@ -1,4 +1,13 @@
-<h2><%= t "reports.new" %></h2>
-<div class="col-md-6 col-md-offset-2">
-  <%= render "form" %>
+<div class="row">
+  <div class="col-lg-5 col-lg-push-7">
+    <div class="panel panel-default">
+      <div class="panel-heading dn-panel-head">
+        <h4><%= t "reports.new" %></h4>
+      </div>
+      <div class="panel-body">
+        <%= render "form" %>
+      </div>
+    </div>
+  </div>
+  <%= render "shared/img_background" %>
 </div>

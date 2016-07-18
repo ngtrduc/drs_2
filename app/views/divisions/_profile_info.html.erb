@@ -1,7 +1,7 @@
 <% @profiles.each_with_index do |profile, index| %>
   <tr>
-    <td><%= image_tag profile.avatar.url, class: "dn-admin-user-image",
-      size: Settings.size %></td>
+    <td class="dn-tab-avatar"><%= image_tag profile.avatar.url,
+      class: "dn-admin-user-image", size: Settings.size %></td>
     <td><%= link_to profile.name, profile.user %></td>
     <td><%= profile.position.name if profile.position %></td>
     <td><%= profile.skill %></td>

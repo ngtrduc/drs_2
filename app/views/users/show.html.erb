@@ -1,19 +1,29 @@
 <% provide :title, @profile.name %>
 <div class="row">
-  <div class="col-md-6 well">
-    <p><%= t :name %>: <%= @profile.name %> </p><br/>
-    <p><%= t :avatar %>: <%= image_tag @profile.avatar.url, size: Settings.size %></p><br/>
-    <p><%= t :position %>: 
-      <%= @profile.position.name unless @profile.position.nil? %></p> <br/>
-    <p><%= t :division %>: 
-      <%= @profile.division.name unless @profile.division.nil? %></p> <br/>
-    <p><%= t :skill %>: 
-      <%= @profile.skill.name unless @profile.skill.nil? %></p> <br/>
-    <section class="stats">
-      <%= render "shared/stats" %>
-    </section>
-    <div class="col-md-8">
-      <%= render "follow_form" if user_signed_in? %>
+  <div class="col-lg-5 col-lg-push-7">
+    <div class="panel panel-default">
+      <div class="panel-heading dn-panel-head">
+        <h4><%= t :update_profile %></h4>
+      </div>
+      <div class="panel-body">
+        <p><%= t "user.name" %>: <%= @profile.name %> </p><br/>
+        <p><%= t "user.avatar" %>: <%= image_tag @profile.avatar.url,
+          size: Settings.size %></p><br/>
+        <p><%= t "user.position" %>: 
+          <%= @profile.position.name unless @profile.position.nil? %></p> <br/>
+        <p><%= t "user.divition" %>: 
+          <%= @profile.division.name unless @profile.division.nil? %></p> <br/>
+        <p><%= t "user.skill" %>: 
+          <%= @profile.skill.name unless @profile.skill.nil? %></p> <br/>
+        <p><%= t "user.uid" %>: <%= @profile.uid %></p> <br/>
+        <section class="stats">
+          <%= render "shared/stats" %>
+        </section>
+        <div class="col-md-8">
+          <%= render "follow_form" if user_signed_in? %>
+        </div>
+      </div>
     </div>
   </div>
+  <%= render "shared/img_background" %>
 </div>

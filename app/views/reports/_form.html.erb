@@ -1,4 +1,4 @@
-<%= simple_form_for @report do |f| %>
+<%= simple_form_for @report, html: {class: "dn-form-request"} do |f| %>
 
   <%= render "shared/error_messages", object: @report %>
 
@@ -11,15 +11,18 @@
     <%= f.label :duration %>
     <%= f.select :duration,
       options_for_select(@durations.collect {|k, v| [t("reports.duration.#{k}"), k]},
-      @report.duration), {}, class: "form-control" %>
+      @report.duration), {prompt: t("reports.select_duration")},
+        class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.input :report_date, as: :date_picker %>
+    <%= f.input :report_date,
+      as: :date_picker, placeholder: t("reports.date") %>
   </div>
 
   <div class="form-group">
-    <%= f.input :achievement, class: "btn-primary" %>
+    <%= f.input :achievement,
+      class: "btn-primary", placeholder: t("reports.achievement") %>
   </div>
 
   <div class="form-group">
