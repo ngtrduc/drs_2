@@ -2,7 +2,8 @@ class Admin::UsersController < Admin::BaseController
   load_and_authorize_resource
 
   def index
-    @users = @users.page params[:page]
+    @search = User.includes(:profile).search params[:q]
+    @users = @search.result.page params[:page]
   end
   
   def show

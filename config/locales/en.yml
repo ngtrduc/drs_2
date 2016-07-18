@@ -60,7 +60,7 @@ en:
   update: "update"
   theform: "The form contains"
   all_users_of: "All users of %{division}"
-  search_name: "Fill name for search user"
+  search_name: "Fill name for search"
   error: "error"
   search: "Search"
   add_manager: "Add Manager"
@@ -103,6 +103,9 @@ en:
   current_pass: "Current_pass"
   notification: "Notification"
   all: "All"
+  select_skill: "Select skill"
+  select_division: "Select division"
+  search_uid: "Fill uid for search"
 
   user:
     name: "Name"
@@ -174,6 +177,15 @@ en:
     new: "New Progess"
     name: "Name"
 
+  skill: 
+    skill: "Skill"
+    all_skills: "All Skills"
+    name: "Name"
+    created_at: "Created_at"
+    updated_at: "Updated_at"
+    created: "Position created"
+    new: "New"
+
   request:
     user: "User"
     type: "Type"
@@ -194,3 +206,8 @@ en:
       subject: "Daily Reports of users"
       title: "Reports of user's report"
     select_request_type: "Select request type"
+  formats:
+    default: "%d/%m/%Y"
+    short: "%m - %Y"
+    day_month: "%d/%m"
+    long: "%H:%M, %d/%m,%Y"
