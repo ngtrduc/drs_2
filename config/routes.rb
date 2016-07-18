@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :skills, except: [:new, :show]
     resources :divisions, except: :new
     resources :progesses, except: [:new, :show]
+    resources :reports, only: :index
     resource :charts do
       collection {get :index}
     end

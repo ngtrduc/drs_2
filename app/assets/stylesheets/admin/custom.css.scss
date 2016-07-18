@@ -2,6 +2,7 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "datepicker";
 
 .dn-content{
   min-height: 562px!important
@@ -38,4 +39,13 @@ hr{
 .dn-btn-add-manager{
   display: inline-block!important;
   width: 180px;
+}
+
+.dn-tab-avatar{
+  padding-left: 50px!important;
+}
+
+.dn-submit-admin-user{
+  margin-left: 15px;
+  margin-top: 10px;
 }

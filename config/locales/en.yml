@@ -106,6 +106,13 @@ en:
   select_skill: "Select skill"
   select_division: "Select division"
   search_uid: "Fill uid for search"
+  select_duration: "Select duration"
+  select_progess: "Select progess"
+  search_achievement: "Fill achievenment for search"
+  search_email: "Fill email for search"
+  download: "Download"
+  csv: "CSV"
+  xls: "Excel"
 
   user:
     name: "Name"
@@ -138,6 +145,7 @@ en:
     skill: "Skill"
     index: "index"
     create: "create"
+    report: "Reports"
   division:
     division: "Division"
     all_divisions: "All Disivions"
@@ -155,9 +163,11 @@ en:
     created: "Position created"
     new: "New"
   reports:
+    id: "ID"
     new: "New Report"
     all: "All reports"
     chart: "Report Chart"
+    user: "User"
     select_duration: "Select duration"
     date: "Report date"
     achievement: "Achievement"

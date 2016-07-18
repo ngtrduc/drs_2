@@ -16,15 +16,22 @@
       </li>
 
       <li>
+        <%= link_to admin_reports_path do %>
+          <i class="fa fa-list-alt"></i>
+          <span><%= t "admin.report" %></span>
+        <% end %>
+      </li>
+
+      <li>
         <%= link_to admin_positions_path do %>
-          <i class="glyphicon glyphicon-list-alt"></i>
+          <i class="fa fa-users"></i>
           <span><%= t "admin.position" %></span>
         <% end %>
       </li>
 
       <li>
         <%= link_to admin_divisions_path do %>
-          <i class="glyphicon glyphicon-list-alt"></i>
+          <i class="fa fa-building-o"></i>
           <span><%= t "admin.division" %></span>
         <% end %>
       </li>
@@ -38,14 +45,14 @@
 
       <li>
         <%= link_to admin_progesses_path do %>
-          <i class="glyphicon glyphicon-list-alt"></i>
+          <i class="fa fa-barcode"></i>
           <span><%= t "admin.progesses" %></span>
         <% end %>
       </li>
 
       <li>
         <%= link_to admin_charts_path do %>
-          <i class="glyphicon glyphicon-list-alt"></i>
+          <i class="fa fa-line-chart"></i>
           <span><%= t "admin.charts" %></span>
         <% end %>
       </li>
