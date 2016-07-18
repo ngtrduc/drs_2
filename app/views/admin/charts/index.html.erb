@@ -1,0 +1,11 @@
+<%= form_tag admin_charts_path, method: :get do %>
+  <div>
+    <%= date_field_tag :date, params[:date], class: "form-control" %>
+    <%= submit_tag t(:show), name: nil, class: "btn btn-primary" %>
+  </div>
+<% end %>
+<h2><%= t "reports.chart" %></h2>
+<%= bar_chart @report_charts %>
+<hr/>
+<h2><%= t "request.chart" %></h2>
+<%= line_chart @request_charts %>

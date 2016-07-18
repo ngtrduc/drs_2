@@ -23,6 +23,8 @@ gem "datetimepicker-rails", github: "zpaulovics/datetimepicker-rails",
 gem "omniauth-facebook"
 gem "omniauth-twitter"
 gem "i18n-js", ">= 3.0.0.rc11"
+gem "groupdate"
+gem "chartkick"
 
 source "https://rails-assets.org/" do
   gem "rails-assets-adminlte"
