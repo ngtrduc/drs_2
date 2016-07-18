@@ -1,0 +1,7 @@
+$("#approved-<%= @request.id %>")
+  .html("<%= j render "form_approved", request: @request %>");
+<% if @request.not_approve? %>
+  $("#approved-<%= @request.id %>").addClass("dn-none");
+<% elsif @request.approved? %>
+  $(".dn-form-not_approve-<%= @request.id %>").addClass("dn-none");
+<% end %>

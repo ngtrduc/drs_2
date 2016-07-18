@@ -9,6 +9,7 @@ class Request < ActiveRecord::Base
   validate :check_compensation_time
 
   enum request_type: ["il", "lo", "le"]
+  enum status: ["waiting", "approved", "not_approve"]
 
   scope :all_division, -> manager_division_id {where "user_id IN
     (SELECT user_id FROM profiles WHERE division_id = ?)", manager_division_id}

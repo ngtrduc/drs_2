@@ -24,8 +24,8 @@
   </div>
 
   <div class="col-md-6 col-md-offset-2">
-    <%= f.label :approved %>
-    <%= f.select :approved_eq, options_for_select([false, true]),
+    <%= f.label :status %>
+    <%= f.select :status_eq, @statuses,
       {include_blank: true}, class: "dn-select-request-type form-control" %>
   </div>
 

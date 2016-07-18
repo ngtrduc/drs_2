@@ -10,10 +10,12 @@ class Ability
     else
       if user.manager?
         can :manage, Division, id: user.profile.division_id
+        can [:read, :update], Request
+        cannot :destroy, Request
       else
         can :manage, Request, user_id: user.id
         cannot [:edit, :update, :destroy], Request, Request do |request|
-          request.approved?
+          request.approved? || request.not_approve?
         end
         can :manage, Report, user_id: user.id
       end

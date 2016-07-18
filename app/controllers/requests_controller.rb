@@ -5,6 +5,7 @@ class RequestsController < ApplicationController
 
   def index  
     if current_user.manager?
+      @statuses = Request.statuses
       load_request_type
       @search = Request.all_division(current_user.profile.division_id)
         .ransack params[:q]      
@@ -33,7 +34,10 @@ class RequestsController < ApplicationController
   def update
     if @request.update_attributes request_params
       flash[:notice] = t :update_success
-      redirect_to requests_path
+      respond_to do |format|
+        format.html {redirect_to requests_path}
+        format.js
+      end
     else
       load_request_type
       flash[:danger] = t :not_updated
@@ -53,7 +57,7 @@ class RequestsController < ApplicationController
   private
   def request_params
     params.require(:request).permit :request_type, :leave_from, :leave_to,
-      :compensation_time_from, :compensation_time_to, :reason
+      :compensation_time_from, :compensation_time_to, :reason, :status
   end
 
   def load_request_type

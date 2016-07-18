@@ -5,7 +5,7 @@ class CreateRequests < ActiveRecord::Migration
       t.integer :request_type
       t.datetime :leave_from
       t.datetime :leave_to
-      t.boolean :approved, default: false
+      t.integer :status, default: 0
       t.text :reason
       t.datetime :compensation_time_from
       t.datetime :compensation_time_to

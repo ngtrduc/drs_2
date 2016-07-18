@@ -9,7 +9,9 @@
     <th><%= t "request.compensation_time_from" %></th>
     <th><%= t "request.compensation_time_to" %></th>
     <th><%= t "request.status" %></th>
-    <th class="action"><%= t :action %></th>
+    <% unless current_user.manager? %>
+      <th class="action"><%= t :action %></th>
+    <% end %>
   </thead>
   <tbody>
     <% @requests.each_with_index do |request, index| %>
@@ -30,14 +32,17 @@
           <%= request.compensation_time_to.strftime t(:time_type_2) unless
             request.compensation_time_to.nil? %>
         </td>
-        <td></td>
-        <td>
-          <% if can? :update, request %>
+        <td id="approved-<%= request.id %>">
+          <%= request.not_approve? ? t(:not_approve) :
+            render("form_approved", request: request) %>
+        </td>
+        <% if can? :destroy, request %>
+          <td>
             <%= link_to t(:edit), edit_request_path(request), class: "btn btn-primary" %>
             <%= link_to t(:delete), request, method: :delete,
               data: {confirm: t(:sure)}, class: "btn btn-danger" %>
-          <% end %>
-        </td>
+          </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
