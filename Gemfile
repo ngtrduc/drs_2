@@ -25,6 +25,7 @@ gem "omniauth-twitter"
 gem "i18n-js", ">= 3.0.0.rc11"
 gem "groupdate"
 gem "chartkick"
+gem "whenever", require: false
 
 source "https://rails-assets.org/" do
   gem "rails-assets-adminlte"

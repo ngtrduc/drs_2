@@ -161,6 +161,10 @@ en:
     errors:
       no_future: "Can not create report in future"
       no_same_day: "Can not create more than one report in the same day"
+    progess: "Progess"
+    duration: "Duration"
+    date: "Report date"
+    achievement: "Achievement"
 
   progesses:
     all: "All Progesses"
@@ -181,3 +185,7 @@ en:
     sure_wait: "Do you want waiting for approve of %{user}?"
     sure_not_approve: "Are you sure not approve for %{user}?"
     chart: "Request Chart"
+  mailer:
+    reports:
+      subject: "Daily Reports of users"
+      title: "Reports of user's report"
