@@ -5,3 +5,4 @@ relation:
   following: "following"
 default_email: "noreply@gmail.com"
 least_requests: 5
+least_reports: 5

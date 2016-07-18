@@ -122,7 +122,8 @@ en:
     division: "Division"
     skill: "Skill"
     uid: "UID"
-
+    reports_count: "Reports"
+    request_count: "Requests"
     created_at: "Created at"
     updated_at: "Updated at"
 
@@ -219,6 +220,9 @@ en:
     requests:
       subject: "Reports of user's request"
       title: "Users have requests more than 5"
+    least_report:
+      subject: "Reports of user have least reports"
+      title: "Reports of user have least reports"
   formats:
     default: "%d/%m/%Y"
     short: "%m - %Y"
