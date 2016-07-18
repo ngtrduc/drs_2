@@ -3,3 +3,4 @@ page_size: 8
 relation:
   followers: "followers"
   following: "following"
+default_email: "noreply@gmail.com"

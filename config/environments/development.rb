@@ -36,6 +36,19 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "gmail.com",
+    user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"],
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
+
+  config.action_mailer.raise_delivery_errors = true
+  host = "localhost:3000" # Don't use this literally; use your local dev host instead
+  config.action_mailer.default_url_options = {host: host, protocol: "https"}
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end

@@ -7,6 +7,8 @@ class Report < ActiveRecord::Base
   validates :report_date, uniqueness: {scope: :user_id}
   validate :check_report_date
   scope :load_chart_info, -> date {where(report_date: date).group(:progess_id).size}
+  scope :all_report_of, -> division_id{where("report_date == ? AND user_id IN
+    (SELECT user_id FROM profiles WHERE division_id = ?)", Date.today, division_id)}
 
   enum duration: ["full_day", "half_day"]
 

@@ -8,4 +8,27 @@ class Division < ActiveRecord::Base
       params << profile.id
     end
   end
+
+  class << self
+    def send_mail_to_manager
+      list_manager = load_managers
+      list_manager.each do |division_id, managers|
+        reports = Report.all_report_of division_id
+        managers.each do |manager|
+          UserMailer.reports_of_user_report(manager, reports).deliver_now
+        end
+      end
+    end
+  end
+
+  private
+  def load_managers
+    divisions = Division.all.includes :profiles
+    list_manager = Hash.new
+    divisions.each do |division|
+      list_manager[division.id] = division.profiles.
+        select{|profile| profile.user.manager?}
+    end
+    list_manager
+  end
 end
