@@ -2,7 +2,7 @@
 <div class="dn-font-group">
   <h1 class="text-center"><%= t :all_request %></h1>
   <div class="panel-body">
-    <% if current_user.manager? %>
+    <% if current_user.profile.manager? %>
       <div>
         <button class="btn btn-primary" id ="dn-request-filter">
           <%= t :filter %>

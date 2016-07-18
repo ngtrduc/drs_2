@@ -27,11 +27,6 @@ class User < ActiveRecord::Base
     following.include? other_user
   end
 
-  # 1 is id of "manager" position
-  def manager?
-    1 == profile.position_id
-  end
-
   class << self
     def from_omniauth auth
       user = User.find_or_initialize_by provider: auth.provider, uid: auth.uid

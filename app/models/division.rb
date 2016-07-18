@@ -27,7 +27,7 @@ class Division < ActiveRecord::Base
     list_manager = Hash.new
     divisions.each do |division|
       list_manager[division.id] = division.profiles.
-        select{|profile| profile.user.manager?}
+        select{|profile| profile.manager?}
     end
     list_manager
   end

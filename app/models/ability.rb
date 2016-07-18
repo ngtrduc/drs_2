@@ -8,7 +8,7 @@ class Ability
     if user.is_admin?
       can :manage, :all
     else
-      if user.manager?
+      if user.profile.manager?
         can :manage, Report
         can :manage, Division, id: user.profile.division_id
         can [:read, :update], Request

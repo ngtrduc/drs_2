@@ -1,7 +1,7 @@
 <table class="table">
   <thead>
     <th>#</th>
-    <th><%= t "request.user" if current_user.manager? %></th>
+    <th><%= t "request.user" if current_user.profile.manager? %></th>
     <th><%= t "request.type" %></th>
     <th><%= t "request.leave_from" %></th>
     <th><%= t "request.leave_to" %></th>
@@ -9,7 +9,7 @@
     <th><%= t "request.compensation_time_from" %></th>
     <th><%= t "request.compensation_time_to" %></th>
     <th><%= t "request.status" %></th>
-    <% unless current_user.manager? %>
+    <% unless current_user.profile.manager? %>
       <th class="action"><%= t :action %></th>
     <% end %>
   </thead>
@@ -21,7 +21,7 @@
         </td>
         <td>
           <div class="dn-text-wrap dn-text-email">
-            <%= request.user.email if current_user.manager? %>
+            <%= request.user.email if current_user.profile.manager? %>
           </div>
         </td>
         <td><%= request.request_type %></td>

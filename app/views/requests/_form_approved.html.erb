@@ -1,4 +1,4 @@
-<% if current_user.manager? %>
+<% if current_user.profile.manager? %>
   <%= render request.approved? ? "approved" : "waiting" ,request: request %>
   <%= form_for request, remote: true,
     html: {class: "dn-form-not_approve-#{request.id} "} do |f| %>
