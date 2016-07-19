@@ -10,9 +10,30 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require i18n/translations
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
 //= require turbolinks
 //= require adminlte
+//= require datepicker
 //= require_tree .
+
+$(document).on('ready', function() {
+  set_timetout();
+  datepick();
+});
+
+$(document).on('page:load', function(){
+  datepick();
+});
+
+function set_timetout() {
+  $('.alert').delay(3000).slideUp();
+}
+
+function datepick(){
+  $('.input-daterange').datepicker({
+    format: I18n.t("request.time_type_3")
+  });
+};

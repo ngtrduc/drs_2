@@ -1,0 +1,4 @@
+<%= t "reports.id" %> <%= t "reports.user" %>    <%= t "reports.progess" %>    <%= t "reports.date" %>   <%= t "reports.achievement" %>
+<% @reports.each do |report| %>
+  <%= report.id %> <%= report.user.profile.name %> <%= report.progess.name %>  <%= report.report_date %>    <%= report.achievement %>
+<% end %>

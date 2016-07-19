@@ -1,0 +1,41 @@
+<%= search_form_for @search, url: admin_reports_path, method: :get do |f| %>
+  <div class="field col-md-6">
+    <%= f.label :email %>
+    <%= f.text_field :user_email_cont, 
+      class: "form-control", placeholder: t(:search_email) %>
+  </div>
+  <div class="field col-md-6">
+    <%= f.label :achievement %>
+    <%= f.text_field :achievement_cont, 
+      class: "form-control", placeholder: t(:search_achievement) %>
+  </div>
+  <div class="field col-md-6">
+    <%= f.label :progess %>
+    <%= f.select :progess_id_eq,
+      options_from_collection_for_select(@progesses, :id, :name,
+      @search.progess_id_eq),
+      {include_blank: t("all"), prompt: t(:select_progess)}, 
+      {class: "form-control"} %>    
+  </div>
+  <div class="field col-md-6">
+    <%= f.label :duration %>
+    <%= f.select :duration_eq, @durations,
+      {include_blank: t("all"), prompt: t(:select_duration)}, 
+      {class: "form-control"} %>    
+  </div>
+  <div class="input-daterange">
+    <div class="dn-inline dn-request-search-create col-md-6">
+      <%= f.label :report_date_from %>
+      <%= f.text_field :report_date_gteq,
+        class: "form-control", placeholder: t(:date_from) %>     
+    </div>
+    <div class="dn-inline dn-request-search-create col-md-6">
+      <%= f.label :report_date_to %>
+      <%= f.text_field :report_date_lteq,
+        class: "form-control", placeholder: t(:date_to) %>
+    </div>
+  </div>
+  <div class="actions">
+    <%= f.submit t(:search), class: "btn btn-success dn-submit-admin-user" %>
+  </div>
+<% end %>

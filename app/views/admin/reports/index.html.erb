@@ -1,0 +1,39 @@
+<h1 class="text-center"><%= t "reports.all" %></h1>
+<p>
+  <%= t :download %>:
+  <%= link_to t(:csv), admin_reports_path(params.merge(format: "csv")) %> |
+  <%= link_to t(:xls), admin_reports_path(params.merge(format: "xls")) %>
+</p>
+<button class="btn btn-primary" id ="dn-request-filter">
+  <%= t :filter %>
+</button>
+<div class="dn-request-filter dn-none">
+  <%= render "search_form" %>
+</div>
+<div>
+  <table class="table">
+    <thead>
+      <th class="dn-tab-avatar">#</th>
+      <th><%= t "reports.user" %></th>
+      <th><%= t "reports.progess" %></th>
+      <th><%= t "reports.duration" %></th>
+      <th><%= t "request.date" %></th>
+      <th><%= t "request.achievement" %></th>
+    </thead>
+    <tbody>
+      <% @reports.each_with_index do |report, index| %>
+        <tr>
+          <td class="dn-tab-avatar"><%= index + 1 +
+            (params[:page] ? (params[:page].to_i - 1) * Settings.page_size : 0) %>
+          </td>
+          <td><%= report.user.email %></td>
+          <td><%= report.progess.name %></td>
+          <td><%= t "reports.duration.#{report.duration}" %></td>
+          <td><%= report.report_date.strftime t(:time_type) %></td>
+          <td><%= report.achievement %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate @reports %>
+</div>
