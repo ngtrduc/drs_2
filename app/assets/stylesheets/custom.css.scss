@@ -260,7 +260,7 @@ h2.dn-login-strike:before{
 
 .dn-front-header{
   background-color: #fff;
-  border-color: #fff;
+  border: none;
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -350,4 +350,11 @@ h2.dn-login-strike:before{
   label{
     display: none;
   }
+}
+
+.dn-ducoc li{
+  padding-bottom: 7px;
+}
+.dn-ducoc li:hover{
+  background-color: #5CA0A1;
 }

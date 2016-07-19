@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show, :destroy]
     resources :profiles, only: :update
     resources :positions, except: :new
+    resources :skills, except: [:new, :show]
     resources :divisions, except: :new
     resources :progesses, except: [:new, :show]
     resource :charts do

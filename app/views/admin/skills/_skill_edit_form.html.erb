@@ -1,0 +1,7 @@
+<span id="skill-name-<%= "#{skill.id}" %>"><%= skill.name %></span>
+<%= form_for [:admin, skill],
+  html: {class: "edit-skill hidden", id: "skill-form-#{skill.id}"},
+  remote: true do |f| %>
+  <%= f.text_field :name, class: "form-control" %>
+  <%= f.submit t(:update), class: "btn btn-success" %>
+<% end %>

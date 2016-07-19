@@ -1,0 +1,14 @@
+<% provide :title, t("skill.all_skills") %>
+<h1 class="text-center"><%= t "skill.all_skills" %></h1>
+<div class="panel-body">
+  <button class="btn btn-primary" id ="dn-skill-new"><%= t "skill.new" %></button>
+  <%= form_for [:admin, @skill], html: {class: "create_skill hidden"} do |f| %>
+    <%= f.label t("skill.name") %>
+    <%= f.text_field :name, class: "form-control", id: "dn-skill-add" %>
+    <%= f.submit t(:create), class: "btn btn-primary" %>
+  <% end %>
+  <div class="dn-all-table-skill" id="dn-all-table-skill">
+    <%= render "all_skills" %>
+  </div>
+  <%= paginate @skills %>
+</div>
