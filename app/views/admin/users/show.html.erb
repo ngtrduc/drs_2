@@ -1,15 +1,15 @@
 <% provide :title, @profile.name %>
 <div class="row">
-  <div class="col-md-6 well">
+  <div class="col-md-6 well col-md-offset-2">
     <%= form_for [:admin, @profile], remote: true do |f| %>
       <p ><%= t :name %>:
         <span id="p-name"><%= @profile.name %></span>
-        <%= f.text_field :name, class: "edit-form hidden" %>
+        <%= f.text_field :name, class: "edit-form hidden form-control" %>
       </p><br/>
 
       <p><%= t "position.position" %>:
         <%= f.collection_select :position_id, @positions, :id, :name,
-          {prompt: t("select.position")}, {class: "edit-form hidden"} %>
+          {prompt: t("select.position")}, {class: "edit-form hidden form-control"} %>
         <span id="p-position">
           <%= @profile.position.name unless @profile.position.nil? %>
         </span>
@@ -17,25 +17,25 @@
 
       <p><%= t "division.division" %>: 
         <%= f.collection_select :division_id, @divisions, :id, :name,
-          {prompt: t("select.division")}, {class: "edit-form hidden"} %>
+          {prompt: t("select.division")}, {class: "edit-form hidden form-control"} %>
         <span id="p-division">
           <%= @profile.division.name unless @profile.division.nil? %>
         </span>
       </p> <br/>
 
-      <p><%= t :skill %>: 
+      <p><%= t "division.skill" %>: 
         <%= f.collection_select :skill_id, @skills, :id, :name,
-          {prompt: t("select.skill")}, {class: "edit-form hidden"} %>
+          {prompt: t("select.skill")}, {class: "edit-form hidden form-control"} %>
         <span id="p-skill">
           <%= @profile.skill.name unless @profile.skill.nil? %>
         </span>
       </p> <br/>
 
-      <%= f.submit t(:save_change), class: "edit-form hidden" %>
+      <%= f.submit t(:save_change), class: "edit-form hidden btn btn-success dn-btn-save" %>
     <% end %>
 
     <%= button_tag t(:edit), class: "btn btn-primary edit_button" %>
     <%= link_to t(:delete), [:admin, @user], method: :delete, data: {confirm: t(:sure)},
-      class: "btn btn-danger btn-primary" unless current_user? @user %>
+      class: "btn btn-danger dn-user-delete" unless current_user? @user %>
   </div>
 </div>
