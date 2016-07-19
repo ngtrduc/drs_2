@@ -1,27 +1,33 @@
 class Ability
   include CanCan::Ability
 
-  def initialize user
+  def initialize user, namespace
     # Define abilities for the passed in user here. For example:
     #
     user ||= User.new
-    if user.is_admin?
-      can :manage, :all
+    if namespace == "admin"
+      user.is_admin? ? can(:manage, :all) : cannot(:manage, :all)
     else
-      if user.manager?
+      if user.is_admin?
+        cannot :manage, :all
+      elsif user.manager?
         can :manage, Report
         can :manage, Division, id: user.profile.division_id
         can [:read, :update], Request
         cannot :destroy, Request
       else
         can :manage, Request, user_id: user.id
+        can :manage, Report, user_id: user.id
+        if user.profile.division_id.nil?
+          cannot :manage, Request, user_id: user.id
+          cannot :manage, Report
+        end
         cannot [:edit, :update, :destroy], Request, Request do |request|
           request.approved? || request.not_approve?
         end
-        can :manage, Report, user_id: user.id
       end
-
     end
+    
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.

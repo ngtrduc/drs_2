@@ -8,7 +8,7 @@ class RelationshipsController < ApplicationController
     else
       relationship = params[:relationship]
       @title = t "follow_user.#{relationship}"
-      @users = @user.send(relationship).paginate page: params[:page]
+      @users = @user.send(relationship).page params[:page]
     end
   end
 
