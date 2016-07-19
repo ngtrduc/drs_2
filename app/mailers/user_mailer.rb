@@ -14,4 +14,9 @@ class UserMailer < ApplicationMailer
     @users = users
     mail to: admin.email, subject: I18n.t("mailer.requests.subject")
   end
+
+  def reports_of_least_report admin, users
+    @users = users
+    mail to: admin.email, subject: I18n.t("mailer.least_reports.subject")
+  end
 end

@@ -44,10 +44,14 @@ class User < ActiveRecord::Base
 
     def send_mail_to_admins
       admins = User.load_admins
-      users = User.includes :requests
-      users = users.select{|user| user.requests.size > Settings.least_requests}
+      users = User.includes :requests, :reports
+      least_request_users = users.select{|user|
+        user.requests.size > Settings.least_requests}
+      least_reports_users = users.select{|user|
+        user.reports.size < Settings.least_reports}
       admins.each do |admin|
         UserMailer.reports_of_user_request(admin, users).deliver_now
+        UserMailer.reports_of_least_report(admin, users).deliver_now
       end
     end
   end
