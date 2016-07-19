@@ -31,4 +31,5 @@ Rails.application.routes.draw do
     end
   end
   resources :reports, except: :show
+  resources :notifications, only: :index
 end

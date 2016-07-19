@@ -3,12 +3,12 @@ class RequestsController < ApplicationController
 
   before_action :load_request_type, only: [:new, :edit]
 
-  def index  
+  def index
     if current_user.manager?
       @statuses = Request.statuses
       load_request_type
       @search = Request.all_division(current_user.profile.division_id)
-        .ransack params[:q]      
+        .ransack params[:q]
       @requests = @search.result.includes(:user).page params[:page]
     else
       @requests = current_user.requests.page params[:page]
@@ -19,8 +19,10 @@ class RequestsController < ApplicationController
   end
 
   def create
-  if @request.save
+    @request.user_id = current_user.id
+    if @request.save
       flash[:success] = t :create_success
+      Notification.create_for_managers current_user.profile.division_id
       redirect_to requests_path
     else
       load_request_type
@@ -34,6 +36,8 @@ class RequestsController < ApplicationController
   def update
     if @request.update_attributes request_params
       flash[:notice] = t :update_success
+      Notification.create_for_users(current_user.profile.division_id,
+        request_params[:request][:status]) if request_params[:request][:status]
       respond_to do |format|
         format.html {redirect_to requests_path}
         format.js

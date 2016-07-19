@@ -95,6 +95,7 @@ en:
   wait: "Waiting"
   not_approve: "Not approve"
   request_head: "Request"
+  notification_head: "Notification"
   report_head: "Report"
   show: "Show charts"
   division_head: "Division"
@@ -113,6 +114,7 @@ en:
   download: "Download"
   csv: "CSV"
   xls: "Excel"
+  ago: "ago"
 
   user:
     name: "Name"
@@ -198,6 +200,7 @@ en:
     new: "New"
 
   request:
+    name: "Request"
     user: "User"
     type: "Type"
     leave_from: "Leave from"
@@ -228,3 +231,8 @@ en:
     short: "%m - %Y"
     day_month: "%d/%m"
     long: "%H:%M, %d/%m,%Y"
+  notification:
+    name: "Notification"
+    sending: "User have send the "
+    approving: "Your manager approve the "
+    not_approve: "Your manager do not approve the "

@@ -1,0 +1,6 @@
+<h2><%= t :notification_head %> (<%= @notifications.size %>)</h2>
+
+<ul class="users">
+  <%= render @notifications %>
+</ul>
+<% paginate @notifications %>

@@ -26,8 +26,9 @@ class Ability
           request.approved? || request.not_approve?
         end
       end
+      can :manage, Notification, user_id: user.id
     end
-    
+
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.
