@@ -10,6 +10,16 @@ class Division < ActiveRecord::Base
   end
 
   class << self
+    def load_managers
+      divisions = Division.all.includes :profiles
+      list_manager = Hash.new
+      divisions.each do |division|
+        list_manager[division.id] = division.profiles.
+          select{|profile| profile.position_id == 1}
+      end
+      list_manager
+    end
+
     def send_mail_to_manager
       list_manager = load_managers
       list_manager.each do |division_id, managers|
@@ -22,13 +32,4 @@ class Division < ActiveRecord::Base
   end
 
   private
-  def load_managers
-    divisions = Division.all.includes :profiles
-    list_manager = Hash.new
-    divisions.each do |division|
-      list_manager[division.id] = division.profiles.
-        select{|profile| profile.user.manager?}
-    end
-    list_manager
-  end
 end

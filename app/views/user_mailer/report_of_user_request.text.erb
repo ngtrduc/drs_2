@@ -1,0 +1,8 @@
+<%= t "mailer.requests.title" %>
+
+<%= "#{t("user.uid")} | #{t("user.name")} | #{t(user.position)} |
+  #{t("user.division")} | #{t("user.skill")} | #{t(user.request_count)}" %>
+<% @users.each do |user| %>
+  <%= "#{user.profile.uid} | #{user.profile.name} | #{user.profile.position.name}
+    #{user.profile.division.name} | #{user.profile.skill.name}" %>
+<% end %>

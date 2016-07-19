@@ -1,0 +1,24 @@
+<h1><%= t "mailer.requests.title" %></h1>
+<table class="table">
+  <thead>
+    <th><%= t "user.uid" %></th>
+    <th><%= t "user.name" %></th>
+    <th><%= t "user.position" %></th>
+    <th><%= t "user.division" %></th>
+    <th><%= t "user.skill" %></th>
+    <th><%= t "user.requests_count" %></th>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.profile.uid  %>
+        </td>
+        <td><%= user.profile.name %></td>
+        <td><%= user.profile.position.name if user.profile.position %></td>
+        <td><%= user.profile.division.name if user.profile.division %></td>
+        <td><%= user.profile.skill.name if user.profile.skill %></td>
+        <td><%= user.requests.size %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

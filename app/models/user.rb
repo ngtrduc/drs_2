@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
   has_many :followers, through: :passive_relationships, source: :follower
   has_many :following, through: :active_relationships, source: :followed
 
+  scope :load_admins, ->{where is_admin: true}
   def follow other_user
     active_relationships.create followed_id: other_user.id
   end
@@ -39,6 +40,15 @@ class User < ActiveRecord::Base
       user.password = Devise.friendly_token[0,20]
       user.save
       user
+    end
+
+    def send_mail_to_admins
+      admins = User.load_admins
+      users = User.includes :requests
+      users = users.select{|user| user.requests.size > Settings.least_requests}
+      admins.each do |admin|
+        UserMailer.reports_of_user_request(admin, users).deliver_now
+      end
     end
   end
 end

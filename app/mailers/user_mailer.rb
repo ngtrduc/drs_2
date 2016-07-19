@@ -6,8 +6,12 @@ class UserMailer < ApplicationMailer
   #   en.user_mailer.reports_of_user_report.subject
   #
   def reports_of_user_report manager, reports
-    @manager = manager
     @reports = reports
-    mail to: @manager.user.email, subject: I18n.t("mailer.reports.subject")
+    mail to: manager.user.email, subject: I18n.t("mailer.reports.subject")
+  end
+
+  def reports_of_user_request admin, users
+    @users = users
+    mail to: admin.email, subject: I18n.t("mailer.requests.subject")
   end
 end
