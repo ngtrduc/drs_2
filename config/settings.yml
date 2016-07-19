@@ -4,3 +4,4 @@ relation:
   followers: "followers"
   following: "following"
 default_email: "noreply@gmail.com"
+least_requests: 5

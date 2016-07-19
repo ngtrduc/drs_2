@@ -3,8 +3,6 @@
 <%= "#{t("reports.progess")} | #{t("reports.duration")} |
   #{t("reports.date")} | #{t("reports.achievement")}" %>
 <% @reports.each_with_index do |report, index| %>
-
   <%= "report.progess.name | #{t("reports.duration.#{report.duration}")} |
     #{report.report_date.strftime(t :time_type)} | #{report.achievement}" %>
-
 <% end %>

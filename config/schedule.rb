@@ -13,6 +13,10 @@
 #   rake "some:great:rake:task"
 # end
 #
+every "59 23 L * *" do
+  runner "User.send_mail_to_admins"
+end
+
 every 1.days, at: "11:55 pm" do
   runner "Division.send_mail_to_manager"
 end

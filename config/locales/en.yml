@@ -177,7 +177,7 @@ en:
     new: "New Progess"
     name: "Name"
 
-  skill: 
+  skill:
     skill: "Skill"
     all_skills: "All Skills"
     name: "Name"
@@ -206,6 +206,9 @@ en:
       subject: "Daily Reports of users"
       title: "Reports of user's report"
     select_request_type: "Select request type"
+    requests:
+      subject: "Reports of user's request"
+      title: "Users have requests more than 5"
   formats:
     default: "%d/%m/%Y"
     short: "%m - %Y"

@@ -9,7 +9,6 @@
         <th><%= t "reports.duration" %></th>
         <th><%= t "reports.date" %></th>
         <th><%= t "reports.achievement" %></th>
-        <th class="action"><%= t :action %></th>
       </thead>
       <tbody>
         <% @reports.each_with_index do |report, index| %>
@@ -20,11 +19,6 @@
             <td><%= t "reports.duration.#{report.duration}" %></td>
             <td><%= report.report_date.strftime t(:time_type) %></td>
             <td><%= report.achievement %></td>
-            <td>
-              <%= link_to t(:edit), edit_report_path(report), class: "btn btn-primary" %>
-              <%= link_to t(:delete), report, method: :delete,
-                data: {confirm: t(:sure)}, class: "btn btn-danger" %>
-            </td>
           </tr>
         <% end %>
       </tbody>
