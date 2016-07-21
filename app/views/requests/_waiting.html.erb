@@ -1,5 +1,0 @@
-<%= form_for request, remote: true do |f| %>
-  <%= f.hidden_field :status, value: "approved" %>
-  <%= f.submit t(:wait), class: "btn btn-success",
-    data: {confirm: t("request.sure_approve", user: request.user.profile.name)} %>
-<% end %>

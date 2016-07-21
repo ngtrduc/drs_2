@@ -9,9 +9,9 @@ class RequestsController < ApplicationController
       load_request_type
       @search = Request.all_division(current_user.profile.division_id)
         .ransack params[:q]
-      @requests = @search.result.includes(:user).page params[:page]
+      @requests = @search.result.includes(:user).order_by_status.page params[:page]
     else
-      @requests = current_user.requests.page params[:page]
+      @requests = current_user.requests.order_by_status.page params[:page]
     end
   end
 
@@ -36,8 +36,8 @@ class RequestsController < ApplicationController
   def update
     if @request.update_attributes request_params
       flash[:notice] = t :update_success
-      Notification.create_for_users(current_user.profile.division_id,
-        request_params[:request][:status]) if request_params[:request][:status]
+      Notification.create_for_user @request.user_id, request_params[:status] if
+        request_params[:status]
       respond_to do |format|
         format.html {redirect_to requests_path}
         format.js

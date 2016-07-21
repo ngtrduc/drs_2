@@ -15,4 +15,8 @@ module ApplicationHelper
   def notification_content notification
     t "notification.#{notification.noti_type}"
   end
+
+  def approve_content request
+    t "request.#{request.status}"
+  end
 end

@@ -8,10 +8,8 @@
     <th><%= t "request.reason" %></th>
     <th><%= t "request.compensation_time_from" %></th>
     <th><%= t "request.compensation_time_to" %></th>
-    <th><%= t "request.status" %></th>
-    <% unless current_user.manager? %>
-      <th class="action"><%= t :action %></th>
-    <% end %>
+    <th><%= sort_link @search, :status, t("request.status") %></th>
+    <th class="action"><%= t :action %></th>
   </thead>
   <tbody>
     <% @requests.each_with_index do |request, index| %>
@@ -38,16 +36,22 @@
           <%= request.compensation_time_to.strftime t(:time_type_2) unless
             request.compensation_time_to.nil? %>
         </td>
-        <td id="approved-<%= request.id %>">
-          <%= request.not_approve? ? t(:not_approve) :
-            render("form_approved", request: request) %>
+        <td id="status-<%= request.id %>">
+          <%= approve_content request %>
         </td>
-        <% if can? :destroy, request %>
-          <td>
-            <%= link_to t(:edit), edit_request_path(request), class: "btn btn-primary" %>
-            <%= link_to t(:delete), request, method: :delete,
-              data: {confirm: t(:sure)}, class: "btn btn-danger" %>
+        <% if current_user.manager? %>
+          <td id="approved-<%= request.id %>">
+            <%= render "form_approved", request: request %>
           </td>
+        <% else %>
+          <% if can? :destroy, request %>
+            <td>
+              <%= link_to t(:edit), edit_request_path(request),
+                class: "btn btn-primary" %>
+              <%= link_to t(:delete), request, method: :delete,
+                data: {confirm: t(:sure)}, class: "btn btn-danger" %>
+            </td>
+          <% end %>
         <% end %>
       </tr>
     <% end %>

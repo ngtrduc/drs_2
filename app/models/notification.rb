@@ -1,9 +1,10 @@
 class Notification < ActiveRecord::Base
   belongs_to :user
 
-  enum noti_type: ["sending", "approving", "not_apporve"]
+  enum noti_type: ["sending", "approved", "not_approve"]
 
   scope :unread, ->{where status: false}
+  scope :order_by_time, ->{order created_at: :desc}
 
   class << self
     def create_for_managers division_id
@@ -16,15 +17,8 @@ class Notification < ActiveRecord::Base
       Notification.create noti_params
     end
 
-    def create_for_users division_id, request_type
-      division = Division.find_by_id division_id
-      users = division.all_users
-      noti_type = request_type == "approved" ? "approving" : "not_apporve"
-      noti_params = []
-      users.each do |user|
-        noti_params << {user_id: manager.id, noti_type: noti_type}
-      end
-      Notification.create noti_params
+    def create_for_user user_id, status
+      Notification.create user_id: user_id, noti_type: status
     end
   end
 end
