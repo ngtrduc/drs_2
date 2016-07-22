@@ -14,10 +14,7 @@ class Request < ActiveRecord::Base
   scope :all_division, -> manager_division_id {where "user_id IN
     (SELECT user_id FROM profiles WHERE division_id = ?)", manager_division_id}
   scope :charts, ->{group("date(created_at)").size}
-
-  def approve_content
-    approved? ? I18n.t(:approved) : ""
-  end
+  scope :order_by_status, ->{order status: :asc}
 
   private
   def check_time

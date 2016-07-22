@@ -1,5 +1,5 @@
-<%= form_for request, remote: true do |f| %>
-  <%= f.hidden_field :status, value: "waiting" %>
-  <%= f.submit t(:approved), class: "btn btn-success",
-    data: {confirm: t("request.sure_wait", user: request.user.profile.name)} %>
+<%= form_for request, remote: true,
+  html: {id: "dn-form-approve-#{request.id}"} do |f| %>
+  <%= f.hidden_field :status, value: "approved" %>
+  <%= f.submit t(:approved), class: "btn btn-success" %>
 <% end %>

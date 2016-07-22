@@ -24,12 +24,12 @@
 
   <div class="form-group">
     <%= f.input :compensation_time_from,
-      as: :datetime_picker, placeholder: t("request.compensation_time_from") %>
+      as: :datetime_picker, input_html: {id: "compensation_time_from"} %>
   </div>
 
   <div class="form-group">
     <%= f.input :compensation_time_to,
-      as: :datetime_picker, placeholder: t("request.compensation_time_to") %>
+      as: :datetime_picker, input_html: {id: "compensation_time_to"} %>
   </div>
 
   <div class="form-group">

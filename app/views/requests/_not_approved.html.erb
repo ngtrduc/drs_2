@@ -1,0 +1,7 @@
+<%= form_for request, remote: true,
+  html: {id: "dn-form-not_approve-#{request.id}"} do |f| %>
+  <%= f.hidden_field :status, value: "not_approve" %>
+  <%= f.submit t(:not_approve), class: "btn btn-danger",
+    data: {confirm: t("request.sure_not_approve",
+    user: request.user.profile.name)} %>
+<% end %>
