@@ -2,6 +2,11 @@
 <div class="row">
   <div class="col-md-6 well col-md-offset-2">
     <%= form_for [:admin, @profile], remote: true do |f| %>
+      <p ><%= t :uid %>:
+        <span id="p-uid"><%= @profile.uid %></span>
+        <%= f.text_field :uid, class: "edit-form hidden form-control" %>
+      </p><br/>
+
       <p ><%= t :name %>:
         <span id="p-name"><%= @profile.name %></span>
         <%= f.text_field :name, class: "edit-form hidden form-control" %>
@@ -15,7 +20,7 @@
         </span>
       </p> <br/>
 
-      <p><%= t "division.division" %>: 
+      <p><%= t "division.division" %>:
         <%= f.collection_select :division_id, @divisions, :id, :name,
           {prompt: t("select.division")}, {class: "edit-form hidden form-control"} %>
         <span id="p-division">
@@ -23,7 +28,7 @@
         </span>
       </p> <br/>
 
-      <p><%= t "division.skill" %>: 
+      <p><%= t "division.skill" %>:
         <%= f.collection_select :skill_id, @skills, :id, :name,
           {prompt: t("select.skill")}, {class: "edit-form hidden form-control"} %>
         <span id="p-skill">
@@ -32,6 +37,7 @@
       </p> <br/>
 
       <%= f.submit t(:save_change), class: "edit-form hidden btn btn-success dn-btn-save" %>
+      <%= f.button t(:cancel), class: "edit-form btn hidden", id: "cancel-btn" %>
     <% end %>
 
     <%= button_tag t(:edit), class: "btn btn-primary edit_button" %>

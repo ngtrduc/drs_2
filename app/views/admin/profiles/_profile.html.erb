@@ -9,7 +9,7 @@
   <td class="dn-action-padding">
     <%= link_to t(:show_profile), admin_user_path(profile.user),
       class: "btn btn-primary" %>
-    <%= link_to t(:delete), [:admin, profile.user], method: :delete, 
+    <%= link_to t(:delete), [:admin, profile.user], method: :delete,
       data: {confirm: t(:sure)},
       class: "btn btn-danger btn-primary" unless profile.user.is_admin? %>
   </td>

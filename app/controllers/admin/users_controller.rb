@@ -5,7 +5,7 @@ class Admin::UsersController < Admin::BaseController
     @search = User.includes(:profile).search params[:q]
     @users = @search.result.page params[:page]
   end
-  
+
   def show
     @profile = @user.profile
     get_data

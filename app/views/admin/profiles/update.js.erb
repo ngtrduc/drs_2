@@ -1,7 +1,8 @@
 $(".edit-form").addClass("hidden")
 $(".edit_button").removeClass("hidden")
+$("#p-uid").text("<%= @profile.uid %>")
 $("#p-name").text("<%= @profile.name %>")
-$("#p-position").text("<%= @profile.position.name unless @profile.position.nil? %>")
-$("#p-division").text("<%= @profile.division.name unless @profile.division.nil? %>")
-$("#p-skill").text("<%= @profile.skill.name unless @profile.skill.nil? %>")
+$("#p-position").text("<%= @profile.position.name if @profile.position %>")
+$("#p-division").text("<%= @profile.division.name if @profile.division %>")
+$("#p-skill").text("<%= @profile.skill.name if @profile.skill %>")
 $(".dn-add-manager-<%= @profile.id %>").remove();

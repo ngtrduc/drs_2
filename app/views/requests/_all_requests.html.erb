@@ -1,28 +1,29 @@
 <table class="table">
   <thead>
-    <th>#</th>
-    <th><%= t "request.user" if current_user.manager? %></th>
+    <% if current_user.manager? %>
+      <th><%= t "request.user" %></th>
+    <% end %>
     <th><%= t "request.type" %></th>
     <th><%= t "request.leave_from" %></th>
     <th><%= t "request.leave_to" %></th>
     <th><%= t "request.reason" %></th>
     <th><%= t "request.compensation_time_from" %></th>
     <th><%= t "request.compensation_time_to" %></th>
-    <th><%= sort_link @search, :status, t("request.status") %></th>
+    <th><%= current_user.manager? ?
+      sort_link(@search, :status, t("request.status")) : t("request.status") %></th>
     <th class="action"><%= t :action %></th>
   </thead>
   <tbody>
     <% @requests.each_with_index do |request, index| %>
       <tr>
-        <td><%= index + 1 +
-          (params[:page].nil? ? 0 : (params[:page].to_i - 1)*Settings.page_size) %>
-        </td>
-        <td>
-          <div class="dn-text-wrap dn-text-email">
-            <%= request.user.email if current_user.manager? %>
-          </div>
-        </td>
-        <td><%= request.request_type %></td>
+        <% if current_user.manager? %>
+          <td>
+            <div class="dn-text-wrap dn-text-email">
+              <%= request.user.email %>
+            </div>
+          </td>
+        <% end %>
+        <td><%= t("request.#{request.request_type}") %></td>
         <td><%= request.leave_from.strftime t(:time_type_2) %></td>
         <td><%= request.leave_to.strftime t(:time_type_2) %></td>
         <td>

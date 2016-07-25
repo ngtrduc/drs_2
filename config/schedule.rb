@@ -13,7 +13,7 @@
 #   rake "some:great:rake:task"
 # end
 #
-every "59 23 L * *" do
+every "59 23 28-31 * *" do
   runner "User.send_mail_to_admins"
 end
 

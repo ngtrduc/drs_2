@@ -3,8 +3,8 @@
   <div class="form-group">
     <%= f.label :request_type %>
     <%= f.select :request_type,
-      options_for_select(@request_types.collect {|k, v| [k, k]},
-      @request.request_type), {prompt: t(:select_request_type)},
+      options_for_select(@request_types.collect {|k, v| [t("request.#{k}"), k]},
+      @request.request_type), {prompt: t("request.select")},
         class: "form-control" %>
   </div>
 

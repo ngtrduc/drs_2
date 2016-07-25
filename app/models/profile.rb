@@ -12,6 +12,7 @@ class Profile < ActiveRecord::Base
     content_type: {content_type: ["image/jpeg", "image/jpg", "image/png", "image/gif"]},
     size: {in: 0..2048.kilobytes}
   validates :name, length: {maximum: 50}
+  validates_uniqueness_of :uid
 
   scope :all_manager, -> {where("position_id IN (select id from positions where
     positions.name = ?)", "Manager")}

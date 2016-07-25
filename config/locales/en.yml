@@ -113,6 +113,7 @@ en:
   csv: "CSV"
   xls: "Excel"
   ago: "ago"
+  cancel: "Cancel"
 
   user:
     name: "Name"
@@ -170,6 +171,7 @@ en:
     chart: "Report Chart"
     user: "User"
     select_duration: "Select duration"
+    select_progess: "Select progess"
     date: "Report date"
     achievement: "Achievement"
     duration:
@@ -213,12 +215,15 @@ en:
     waitting: "Waiting"
     approved: "Approved"
     not_approve: "Not Approved"
+    il: "In Late"
+    lo: "Leave Out"
+    le: "Leave Early"
+    select: "Select request type"
 
   mailer:
     reports:
       subject: "Daily Reports of users"
       title: "Reports of user's report"
-    select_request_type: "Select request type"
     requests:
       subject: "Reports of user's request"
       title: "Users have requests more than 5"
@@ -233,5 +238,5 @@ en:
   notification:
     name: "Notification"
     sending: "User have send the "
-    approving: "Your manager approve the "
+    approved: "Your manager approve the "
     not_approve: "Your manager do not approve the "

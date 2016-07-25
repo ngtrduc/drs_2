@@ -12,8 +12,19 @@ var save_change = function(){
   });
 };
 
+var cancel_change = function(){
+  $('#cancel-btn').click(function(){
+    $('.edit-form').addClass('hidden');
+    $(this).removeClass('hidden');
+    $('.dn-user-delete').removeClass('hidden');
+  })
+}
+
 $(document).ready(edit_form);
 $(document).on('page:load', edit_form);
 
 $(document).ready(save_change);
 $(document).on('page:load', save_change);
+
+$(document).ready(cancel_change);
+$(document).on('page:load', cancel_change);

@@ -3,12 +3,12 @@
 <%= search_form_for @search, url: admin_users_path, method: :get do |f| %>
   <div class="field col-md-6">
     <%= f.label :name %>
-    <%= f.text_field :profile_name_cont, 
+    <%= f.text_field :profile_name_cont,
       class: "form-control", placeholder: t(:search_name) %>
   </div>
   <div class="field col-md-6">
     <%= f.label :UID %>
-    <%= f.text_field :profile_uid_cont, 
+    <%= f.text_field :profile_uid_cont,
       class: "form-control", placeholder: t(:search_uid) %>
   </div>
   <div class="field col-md-6">
@@ -16,16 +16,16 @@
     <%= f.select :profile_division_id_eq,
       options_from_collection_for_select(Division.all, :id, :name,
       @search.profile_division_id_eq),
-      {include_blank: t("all"), prompt: t(:select_division)}, 
-      {class: "form-control"} %>    
+      {include_blank: t("all"), prompt: t(:select_division)},
+      {class: "form-control"} %>
   </div>
   <div class="field col-md-6">
     <%= f.label :skill %>
     <%= f.select :profile_skill_id_eq,
       options_from_collection_for_select(Skill.all, :id, :name,
       @search.profile_skill_id_eq),
-      {include_blank: t("all"), prompt: t(:select_skill)}, 
-      {class: "form-control"} %>    
+      {include_blank: t("all"), prompt: t(:select_skill)},
+      {class: "form-control"} %>
   </div>
   <div class="actions">
     <%= f.submit t(:search), class: "btn btn-success dn-submit-admin-user" %>
@@ -34,12 +34,12 @@
 <div class="panel-body">
   <table class="table">
     <thead>
-      <th><%= t "user.avatar" %></th>
-      <th><%= t "user.name" %></th>
-      <th><%= t "user.email" %></th>
-      <th><%= t "user.division" %></th>
-      <th><%= t "user.skill" %></th>
       <th><%= t "user.uid" %></th>
+      <th><%= sort_link(@search, :email, t("user.email")) %></th>
+      <th><%= sort_link(@search, :profile_name, t("user.name")) %></th>
+      <th><%= sort_link(@search, :profile_position_id, t("user.position")) %></th>
+      <th><%=  sort_link(@search, :profile_division_id, t("user.division")) %></th>
+      <th><%= t "user.skill" %></th>
       <th><%= t "user.created_at" %></th>
       <th><%= t "user.update_at" %></th>
       <th class="action"><%= t :action %></th>
@@ -47,19 +47,18 @@
     <tbody>
       <% @users.each do |user| %>
         <tr>
-          <td><%= image_tag user.profile.avatar.url, class: "dn-admin-user-image",
-            size: Settings.size %></td>
-          <td><%= link_to user.profile.name, [:admin, user] %></td>
-          <td><%= user.email %></td>
-          <td><%= user.profile.division.name if user.profile.division %></td>
-          <td><%= user.profile.skill.name if user.profile.skill %></td>
           <td><%= user.profile.uid %></td>
+          <td><%= link_to user.email, [:admin, user] %></td>
+          <td><%= user.profile.name %></td>
+          <td><%= link_to(user.profile.position.name, [:admin,
+            user.profile.position]) if user.profile.position %></td>
+          <td><%= link_to(user.profile.division.name, [:admin,
+            user.profile.division]) if user.profile.division %></td>
+          <td><%= user.profile.skill.name if user.profile.skill %></td>
           <td><%= user.created_at.strftime t(:time_type) %></td>
           <td><%= user.updated_at.strftime t(:time_type) %></td>
           <td class="dn-action-padding">
-            <%= link_to t(:show_profile), admin_user_path(user),
-              class: "btn btn-primary" %>
-            <%= link_to t(:delete), [:admin, user], method: :delete, 
+            <%= link_to t(:delete), [:admin, user], method: :delete,
               data: {confirm: t(:sure)},
               class: "btn btn-danger btn-primary" unless current_user? user %>
           </td>
