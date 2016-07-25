@@ -20,4 +20,3 @@ var getTimedefault = function(){
 }
 $(document).ready(getTimedefault);
 $(document).on('page:load', getTimedefault);
-
